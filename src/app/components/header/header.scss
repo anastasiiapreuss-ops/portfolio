@@ -1,0 +1,110 @@
+:host {
+  display: block;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  padding: var(--space-3) var(--space-3);
+  color: var(--color-offwhite);
+}
+
+.header_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.ap_icon {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(var(--color-gold-rgb), 0.8));
+  }
+}
+
+.header_links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.lang_toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.lang_btn {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-brown);
+  color: var(--color-offwhite);
+  opacity: 0.9;
+  cursor: pointer;
+  transition: border-color 0.2s, opacity 0.2s, background 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: var(--color-gold);
+  }
+
+  &.active {
+    background: var(--color-gold);
+    color: var(--color-espresso);
+    font-weight: 800;
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+.header_links a {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--color-offwhite);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: var(--space-1);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+}
