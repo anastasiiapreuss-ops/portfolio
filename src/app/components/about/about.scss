@@ -1,0 +1,208 @@
+.about-section {
+    width: 100%;
+    background-image: url('/assets/imgs/background_2.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.about-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-5);
+}
+
+.about-content {
+    flex: 1 1 480px;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+
+    h2 {
+        font-family: var(--font-heading);
+        font-size: var(--fs-h1);
+        font-weight: 700;
+        color: var(--color-offwhite);
+        line-height: 1.15;
+    }
+}
+
+.about-text {
+    font-family: var(--font-body);
+    font-size: calc(var(--fs-body) + 3px);
+    line-height: 1.6;
+    color: var(--color-offwhite);
+    opacity: 0.85;
+}
+
+.about-label {
+    display: block;
+    font-size: calc(var(--fs-body) + 5px);
+    font-weight: 700;
+    color: var(--color-offwhite);
+    opacity: 1;
+
+}
+
+.about-more {
+    margin-top: calc(-1 * var(--space-1));
+}
+
+.more_button {
+    width: 300px;
+    display: inline-block;
+    margin-top: var(--space-1);
+    padding: 18px var(--space-5);
+    border-radius: var(--radius-sm);
+    border-color: var(--color-gold);
+    background: transparent;
+    color: var(--color-gold);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--fs-h3);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 10px 24px rgba(var(--color-gold-rgb), 0.35);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-gold);
+        outline-offset: 4px;
+    }
+}
+
+.about-highlights {
+    flex: 1 1 380px;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight_row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    transition: transform 0.2s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: rgba(var(--color-gold-rgb), 0.2);
+        box-shadow: none;
+        transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-4px) scale(1.02);
+
+        &::after {
+            background: var(--color-gold);
+            box-shadow: 0 2px 10px rgba(var(--color-gold-rgb), 0.6);
+        }
+    }
+}
+
+.highlight_icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px outset var(--color-gold);
+
+}
+
+.highlight_icon_glyph {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background-color: var(--color-gold);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    &.icon-marker {
+        -webkit-mask-image: url('/assets/icons/icons8-marker-100.png');
+        mask-image: url('/assets/icons/icons8-marker-100.png');
+    }
+
+    &.icon-bulb {
+        -webkit-mask-image: url('/assets/icons/icons8-light-48.png');
+        mask-image: url('/assets/icons/icons8-light-48.png');
+    }
+
+    &.icon-team {
+        -webkit-mask-image: url('/assets/icons/icons8-benutzergruppen-64.png');
+        mask-image: url('/assets/icons/icons8-benutzergruppen-64.png');
+    }
+}
+
+.highlight_text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.highlight_title {
+    font-family: var(--font-body);
+    font-size: calc(var(--fs-body) + 3px);
+    font-weight: 700;
+    color: var(--color-offwhite);
+}
+
+.highlight_desc {
+    font-family: var(--font-body);
+    font-size: calc(var(--fs-small) + 3px);
+    color: var(--color-offwhite);
+    opacity: 0.7;
+}
+
+.accent {
+    color: var(--color-gold);
+}
+
+@media (max-width: 900px) {
+    .about-inner {
+        flex-direction: column;
+        gap: var(--space-5);
+        padding: var(--space-5) var(--space-4);
+    }
+
+    .about-content,
+    .about-highlights {
+        max-width: 100%;
+    }
+}

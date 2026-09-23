@@ -1,1 +1,65 @@
-<p>about works!</p>
+<section class="about-section">
+  <section class="about-inner">
+    <section class="about-content">
+        <h2>About <span class="accent">me</span></h2>
+        <p class="about-text">
+            <span class="about-label">Hey, ich bin Anastasiia!</span>
+            Ich entwickle digitale Lösungen, bei denen Design und Funktion zusammenkommen.
+            <span class="about-label">Weiterentwickeln</span>
+            Neue Technologien entdecken, Wissen erweitern und neue Herausforderungen angehen.
+        </p>
+        
+        @if(showMore){
+        <p class="about-text about-more">
+            Nach mehreren Jahren in der Labormedizin wollte ich mich beruflich weiterentwickeln und einen neuen Weg
+            einschlagen. Auf der Suche nach etwas Neuem bin ich auf die Webentwicklung gestoßen. Je mehr ich darüber
+            gelernt habe, desto faszinierender wurde für mich die Möglichkeit, mit Code eigene Ideen zum Leben zu
+            erwecken.
+            <br>
+            Was zunächst wie zwei völlig unterschiedliche Bereiche wirkt, hat für mich einige Gemeinsamkeiten: Sorgfalt,
+            Genauigkeit, Geduld und die Ausdauer, so lange nach einer Lösung zu suchen, bis sie funktioniert.
+            <br>
+            Gleichzeitig bietet mir die Webentwicklung etwas völlig Neues: Ich kann aus einer Idee selbst etwas
+            Einzigartiges erschaffen. Genau diese Mischung aus Logik, Kreativität und ständigem Lernen hat mich
+            fasziniert.
+        </p>
+        }
+        <button class="more_button" (click)="showMore = !showMore">More about me</button>
+
+    </section>
+
+    <section class="about-highlights">
+        <section class="highlight_row">
+            <span class="highlight_icon">
+                <span class="highlight_icon_glyph icon-marker"></span>
+            </span>
+            <section class="highlight_text">
+                <p class="highlight_title">Offen für neue Möglichkeiten</p>
+                <p class="highlight_desc">Remote oder vor Ort</p>
+            </section>
+        </section>
+
+        <section class="highlight_row">
+            <span class="highlight_icon">
+                <span class="highlight_icon_glyph icon-bulb"></span>
+            </span>
+            <section class="highlight_text">
+                <p class="highlight_title">Immer am Lernen</p>
+                <p class="highlight_desc">Neue Technologien &amp; bessere Lösungen</p>
+            </section>
+        </section>
+
+        <section class="highlight_row">
+            <span class="highlight_icon">
+                <span class="highlight_icon_glyph icon-team"></span>
+            </span>
+            <section class="highlight_text">
+                <p class="highlight_title">Teamplayer</p>
+                <p class="highlight_desc">Zusammenarbeit &amp; kreative Ideen</p>
+            </section>
+        </section>
+    </section>
+</section>
+</section>
+
+<hr class="section-divider" />
