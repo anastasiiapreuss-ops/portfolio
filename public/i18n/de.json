@@ -1,0 +1,37 @@
+{
+  "HEADER": {
+    "ABOUT": "Über mich",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projekte",
+    "CONTACT": "Kontakt"
+  },
+  "HERO": {
+    "INTRO": "ICH BIN",
+    "ROLE": "FULLSTACK DEVELOPER",
+    "TAGLINE": "Ideen werden Code. Code wird Erlebnis.",
+    "CTA": "Lass uns reden!"
+  },
+  "ABOUT": {
+    "TITLE": "Über",
+    "TITLE_ACCENT": "mich",
+    "HELLO_LABEL": "Hey, ich bin Anastasiia!",
+    "HELLO_TEXT": "Ich entwickle digitale Lösungen, bei denen Design und Funktion zusammenkommen.",
+    "GROW_LABEL": "Weiterentwickeln",
+    "GROW_TEXT": "Neue Technologien entdecken, Wissen erweitern und neue Herausforderungen angehen.",
+    "MORE_TEXT_1": "Nach mehreren Jahren in der Labormedizin wollte ich mich beruflich weiterentwickeln und einen neuen Weg einschlagen. Auf der Suche nach etwas Neuem bin ich auf die Webentwicklung gestoßen. Je mehr ich darüber gelernt habe, desto faszinierender wurde für mich die Möglichkeit, mit Code eigene Ideen zum Leben zu erwecken.",
+    "MORE_TEXT_2": "Was zunächst wie zwei völlig unterschiedliche Bereiche wirkt, hat für mich einige Gemeinsamkeiten: Sorgfalt, Genauigkeit, Geduld und die Ausdauer, so lange nach einer Lösung zu suchen, bis sie funktioniert.",
+    "MORE_TEXT_3": "Gleichzeitig bietet mir die Webentwicklung etwas völlig Neues: Ich kann aus einer Idee selbst etwas Einzigartiges erschaffen. Genau diese Mischung aus Logik, Kreativität und ständigem Lernen hat mich fasziniert.",
+    "MORE_BUTTON": "Mehr über mich",
+    "OPEN_TITLE": "Offen für neue Möglichkeiten",
+    "OPEN_DESC": "Remote oder vor Ort",
+    "LEARNING_TITLE": "Immer am Lernen",
+    "LEARNING_DESC": "Neue Technologien & bessere Lösungen",
+    "TEAM_TITLE": "Teamplayer",
+    "TEAM_DESC": "Zusammenarbeit & kreative Ideen"
+  },
+  "SKILLS": {
+    "TITLE": "Meine",
+    "TITLE_ACCENT": "Skills",
+    "SUBTITLE": "TECHNOLOGIEN, MIT DENEN ICH ARBEITE"
+  }
+}

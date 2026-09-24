@@ -1,32 +1,16 @@
 <nav class="header_bar">
   <div class="header_left">
     <img class="ap_icon" src="assets/icons/AP_icon.png" alt="Anastasiia Preuß Logo">
-
     <div class="header_links">
-      <a href="#about-me">About me</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projekte</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#about-me">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
+      <a href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
+      <a href="#contact">{{ 'HEADER.CONTACT' | translate }}</a>
     </div>
   </div>
 
   <div class="lang_toggle">
-    <button
-      type="button"
-      class="lang_btn"
-      [class.active]="language() === 'de'"
-      (click)="setLanguage('de')"
-    >
-      DE
-    </button>
-    <button
-      type="button"
-      class="lang_btn"
-      [class.active]="language() === 'en'"
-      (click)="setLanguage('en')"
-    >
-      EN
-    </button>
+    <button type="button" class="lang_btn" [class.active]="isActive('de')" (click)="useLanguage('de')">DE</button>
+    <button type="button" class="lang_btn" [class.active]="isActive('en')" (click)="useLanguage('en')">EN</button>
   </div>
-</nav>
-
+</nav> 

@@ -1,15 +1,22 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [],
+  imports:[TranslatePipe],
   selector: 'app-header',
   styleUrl: './header.scss',
   templateUrl: './header.html',
 })
 export class Header {
-  protected readonly language = signal<'de' | 'en'>('en');
+  private translate = inject(TranslateService);
 
-  protected setLanguage(lang: 'de' | 'en'): void {
-    this.language.set(lang);
+  useLanguage(language: string): void {
+      this.translate.use(language);
   }
+
+  isActive(language: string): boolean {
+      return this.translate.getCurrentLang() === language;
+  }
+
+
 }

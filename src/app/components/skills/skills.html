@@ -1,1 +1,22 @@
-<p>skills works!</p>
+<section class="skills-section">
+  <section class="skills-inner">
+    <section class="skills-header">
+      <h2>{{ 'SKILLS.TITLE' | translate }} <span class="accent">{{ 'SKILLS.TITLE_ACCENT' | translate }}</span></h2>
+      <p class="skills-subtitle">
+        <span class="skills-subtitle_line"></span>
+        {{ 'SKILLS.SUBTITLE' | translate }}
+      </p>
+    </section>
+
+    <section class="skills-grid">
+      @for (skill of skills; track skill.name) {
+        <section class="skill_item">
+          <span class="skill_icon {{ skill.icon }}"></span>
+          <p class="skill_name">{{ skill.name }}</p>
+        </section>
+      }
+    </section>
+  </section>
+</section>
+
+<hr class="section-divider" />

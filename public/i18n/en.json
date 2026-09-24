@@ -1,0 +1,37 @@
+{
+  "HEADER": {
+    "ABOUT": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "INTRO": "I AM",
+    "ROLE": "FULLSTACK DEVELOPER",
+    "TAGLINE": "Ideas become code. Code becomes experience.",
+    "CTA": "Let's talk!"
+  },
+  "ABOUT": {
+    "TITLE": "About",
+    "TITLE_ACCENT": "me",
+    "HELLO_LABEL": "Hey, I'm Anastasiia!",
+    "HELLO_TEXT": "I build digital solutions where design and functionality come together.",
+    "GROW_LABEL": "Always growing",
+    "GROW_TEXT": "Discovering new technologies, expanding my knowledge and taking on new challenges.",
+    "MORE_TEXT_1": "After several years in laboratory medicine, I wanted to grow professionally and take a new path. While looking for something new, I discovered web development. The more I learned about it, the more fascinated I became by the possibility of bringing my own ideas to life with code.",
+    "MORE_TEXT_2": "What may seem like two completely different fields actually have a lot in common for me: care, precision, patience and the persistence to keep looking for a solution until it works.",
+    "MORE_TEXT_3": "At the same time, web development gives me something completely new: I can turn an idea into something unique myself. It is exactly this mix of logic, creativity and constant learning that fascinated me.",
+    "MORE_BUTTON": "More about me",
+    "OPEN_TITLE": "Open to new opportunities",
+    "OPEN_DESC": "Remote or on-site",
+    "LEARNING_TITLE": "Always learning",
+    "LEARNING_DESC": "New technologies & better solutions",
+    "TEAM_TITLE": "Team player",
+    "TEAM_DESC": "Collaboration & creative ideas"
+  },
+  "SKILLS": {
+    "TITLE": "Skill",
+    "TITLE_ACCENT": "set",
+    "SUBTITLE": "TECHNOLOGIES I WORK WITH"
+  }
+}

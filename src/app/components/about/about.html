@@ -1,30 +1,24 @@
 <section class="about-section">
   <section class="about-inner">
     <section class="about-content">
-        <h2>About <span class="accent">me</span></h2>
+        <h2>{{ 'ABOUT.TITLE' | translate }} <span class="accent">{{ 'ABOUT.TITLE_ACCENT' | translate }}</span></h2>
         <p class="about-text">
-            <span class="about-label">Hey, ich bin Anastasiia!</span>
-            Ich entwickle digitale Lösungen, bei denen Design und Funktion zusammenkommen.
-            <span class="about-label">Weiterentwickeln</span>
-            Neue Technologien entdecken, Wissen erweitern und neue Herausforderungen angehen.
+            <span class="about-label">{{ 'ABOUT.HELLO_LABEL' | translate }}</span>
+            {{ 'ABOUT.HELLO_TEXT' | translate }}
+            <span class="about-label">{{ 'ABOUT.GROW_LABEL' | translate }}</span>
+            {{ 'ABOUT.GROW_TEXT' | translate }}
         </p>
         
         @if(showMore){
         <p class="about-text about-more">
-            Nach mehreren Jahren in der Labormedizin wollte ich mich beruflich weiterentwickeln und einen neuen Weg
-            einschlagen. Auf der Suche nach etwas Neuem bin ich auf die Webentwicklung gestoßen. Je mehr ich darüber
-            gelernt habe, desto faszinierender wurde für mich die Möglichkeit, mit Code eigene Ideen zum Leben zu
-            erwecken.
+            {{ 'ABOUT.MORE_TEXT_1' | translate }}
             <br>
-            Was zunächst wie zwei völlig unterschiedliche Bereiche wirkt, hat für mich einige Gemeinsamkeiten: Sorgfalt,
-            Genauigkeit, Geduld und die Ausdauer, so lange nach einer Lösung zu suchen, bis sie funktioniert.
+            {{ 'ABOUT.MORE_TEXT_2' | translate }}
             <br>
-            Gleichzeitig bietet mir die Webentwicklung etwas völlig Neues: Ich kann aus einer Idee selbst etwas
-            Einzigartiges erschaffen. Genau diese Mischung aus Logik, Kreativität und ständigem Lernen hat mich
-            fasziniert.
+            {{ 'ABOUT.MORE_TEXT_3' | translate }}
         </p>
         }
-        <button class="more_button" (click)="showMore = !showMore">More about me</button>
+        <button class="more_button" (click)="showMore = !showMore">{{ 'ABOUT.MORE_BUTTON' | translate }}</button>
 
     </section>
 
@@ -34,8 +28,8 @@
                 <span class="highlight_icon_glyph icon-marker"></span>
             </span>
             <section class="highlight_text">
-                <p class="highlight_title">Offen für neue Möglichkeiten</p>
-                <p class="highlight_desc">Remote oder vor Ort</p>
+                <p class="highlight_title">{{ 'ABOUT.OPEN_TITLE' | translate }}</p>
+                <p class="highlight_desc">{{ 'ABOUT.OPEN_DESC' | translate }}</p>
             </section>
         </section>
 
@@ -44,8 +38,8 @@
                 <span class="highlight_icon_glyph icon-bulb"></span>
             </span>
             <section class="highlight_text">
-                <p class="highlight_title">Immer am Lernen</p>
-                <p class="highlight_desc">Neue Technologien &amp; bessere Lösungen</p>
+                <p class="highlight_title">{{ 'ABOUT.LEARNING_TITLE' | translate }}</p>
+                <p class="highlight_desc">{{ 'ABOUT.LEARNING_DESC' | translate }}</p>
             </section>
         </section>
 
@@ -54,8 +48,8 @@
                 <span class="highlight_icon_glyph icon-team"></span>
             </span>
             <section class="highlight_text">
-                <p class="highlight_title">Teamplayer</p>
-                <p class="highlight_desc">Zusammenarbeit &amp; kreative Ideen</p>
+                <p class="highlight_title">{{ 'ABOUT.TEAM_TITLE' | translate }}</p>
+                <p class="highlight_desc">{{ 'ABOUT.TEAM_DESC' | translate }}</p>
             </section>
         </section>
     </section>
