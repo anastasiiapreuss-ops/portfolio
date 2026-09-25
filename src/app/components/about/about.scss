@@ -1,9 +1,11 @@
 .about-section {
     width: 100%;
     padding: var(--space-6) var(--space-5);
-    background-image: url('/assets/imgs/background_2.png');
-    background-size: cover;
-    background-position: center top;
+    // Ebene 1: goldener Strich unten rechts, Ebene 2: dunkler Hintergrund
+    // 4.541 = Bildbreite / Breite des Strichs in gold_2.png (2048 / 451)
+    background-image: url('/assets/imgs/gold_2.png'), url('/assets/imgs/background.png');
+    background-size: calc(min(25vw, 420px) * 4.541) auto, cover;
+    background-position: right bottom, center top;
     background-repeat: no-repeat;                               
 }
 
@@ -27,7 +29,7 @@
 
     h2 {
         font-family: var(--font-heading);
-        font-size: var(--fs-h1);
+        font-size: calc(var(--fs-h1) * 1.25);
         font-weight: 700;
         color: var(--color-offwhite);
         line-height: 1.15;

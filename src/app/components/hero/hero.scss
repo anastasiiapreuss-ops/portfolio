@@ -8,7 +8,7 @@
 
 .hero_content {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-5);
   width: 100%;
@@ -20,8 +20,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-3);
+  justify-content: center;
+  gap: var(--space-4);
   max-width: 620px;
 }
 
@@ -45,14 +45,15 @@
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-body);
-  font-size: calc(var(--fs-small) + 2px);
+  font-size: calc(var(--fs-small) + 3px);
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-offwhite);
+  color: var(--color-gold);;
 
   > span:first-child {
-    opacity: 0.7;
+    opacity: 0.8;
+     font-size: calc(var(--fs-small) + 5px);
   }
 }
 
@@ -194,14 +195,29 @@
   .hero_content {
     align-items: center;
     flex-direction: column;
+    gap: var(--space-4);
     text-align: center;
   }
 
+  // hero_text löst sich auf, damit der Kreis zwischen "I AM" und Name rutscht
   .hero_text {
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--space-4);
-    max-width: 100%;
+    display: contents;
+  }
+
+  .hero_intro {
+    order: 1;
+  }
+
+  .hero_photo {
+    order: 2;
+  }
+
+  .hero_main {
+    order: 3;
+  }
+
+  .hero_actions {
+    order: 4;
   }
 
   .hero_main,

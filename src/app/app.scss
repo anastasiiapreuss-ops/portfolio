@@ -4,10 +4,25 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: url('/assets/imgs/background_1.png');
+  background-image: url('/assets/imgs/background.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+
+  // Goldener Brush als eigene dekorative Ebene oben rechts.
+  // Größe nur über die Breite, Höhe ergibt sich aus dem Seitenverhältnis –
+  // unabhängig von der Hero-Höhe. Header (z-index 10) und Hero (z-index 1) liegen darüber.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: min(52vw, 1000px);
+    aspect-ratio: 1188 / 778; // sichtbarer Brush-Bereich in gold_1.png (links davon ist das Bild leer)
+    background: url('/assets/imgs/gold__.png') right top / auto 100% no-repeat;
+    pointer-events: none;
+  }
 
   app-header {
     flex: 0 0 auto;
@@ -19,5 +34,19 @@
   }
 }
 
+// Unter 1440px wächst bzw. schrumpft der Brush stufenlos mit (px-Anteil + vw-Anteil):
+// 1440px → 749px breit (wie 52vw), 1024px → ca. 614px, 769px → ca. 531px.
+// So bleibt er auf Tablets rechts und der Textbereich frei.
+@media (max-width: 1440px) {
+  .hero-section::before {
+    width: calc(32.5vw + 281px);
+  }
+}
 
-
+// Mobile: Inhalt steht untereinander – Brush größer, läuft hinter dem Foto-Kreis aus.
+// Ebenfalls stufenlos: 768px → ca. 715px breit, 320px → ca. 345px.
+@media (max-width: 768px) {
+  .hero-section::before {
+    width: calc(82vw + 85px);
+  }
+}
