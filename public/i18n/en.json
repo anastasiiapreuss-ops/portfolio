@@ -33,5 +33,12 @@
     "TITLE": "Skill",
     "TITLE_ACCENT": "set",
     "SUBTITLE": "TECHNOLOGIES I WORK WITH"
+  },
+  "PROJECTS": {
+    "TITLE": "My",
+    "TITLE_ACCENT": "Projects",
+    "JOIN_DESC": "Task manager inspired by the Kanban system. Create, organize and move tasks via drag and drop.",
+    "MEMORY_DESC": "Memory game with selectable themes, players and board sizes.",
+    "POLLO_DESC": "A jump-and-run browser game: help Pepe collect coins and salsa and defeat the crazy hen."
   }
 }

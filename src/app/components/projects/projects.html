@@ -1,1 +1,31 @@
-<p>projects works!</p>
+<section class="projects-section">
+  <section class="projects-inner">
+    <h2>{{ 'PROJECTS.TITLE' | translate }} <span class="accent">{{ 'PROJECTS.TITLE_ACCENT' | translate }}</span></h2>
+
+    <section class="projects-list">
+      @for (project of projects; track project.title) {
+        <article class="project_row" (mouseenter)="light(project.title)" [class.is-lit]="litProjects.has(project.title)" (focusin)="light(project.title)">
+          <div class="project_image">
+            <img [src]="project.image" [alt]="project.title" />
+          </div>
+
+          <div class="project_info">
+            <h3 class="project_title">{{ project.title }}</h3>
+            <ul class="project_tags">
+              @for (tag of project.tags; track tag) {
+                <li>{{ tag }}</li>
+              }
+            </ul>
+            <p class="project_desc">{{ project.description | translate }}</p>
+            <div class="project_links">
+              <a class="project_btn project_btn--filled" [href]="project.github" target="_blank" rel="noopener">GitHub</a>
+              <a class="project_btn" [href]="project.live" target="_blank" rel="noopener">Live Test</a>
+            </div>
+          </div>
+        </article>
+      }
+    </section>
+  </section>
+</section>
+
+<hr class="section-divider" />

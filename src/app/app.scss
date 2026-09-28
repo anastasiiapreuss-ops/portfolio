@@ -9,18 +9,18 @@
   background-position: center top;
   background-repeat: no-repeat;
 
-  // Goldener Brush als eigene dekorative Ebene oben rechts.
-  // Größe nur über die Breite, Höhe ergibt sich aus dem Seitenverhältnis –
-  // unabhängig von der Hero-Höhe. Header (z-index 10) und Hero (z-index 1) liegen darüber.
+  // Goldener Brush (gold_1) als eigene dekorative Ebene oben rechts.
+  // Die Ebene füllt die ganze Hero-Section (mind. 100vh, reicht bis zur About-Me-Section),
+  // das Bild wird auf die volle Höhe skaliert und rechts ausgerichtet.
+  // Die Section selbst ist nicht begrenzt – der Hintergrund darf über 1440px hinaus wachsen,
+  // nur der Inhalt (Header/Hero) ist über --content-max-width auf 1440px begrenzt.
+  // Header (z-index 10) und Hero (z-index 1) liegen darüber.
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
+    inset: 0;
     z-index: 0;
-    width: min(52vw, 1000px);
-    aspect-ratio: 1188 / 778; // sichtbarer Brush-Bereich in gold_1.png (links davon ist das Bild leer)
-    background: url('/assets/imgs/gold__.png') right top / auto 100% no-repeat;
+    background: url('/assets/imgs/gold_1.png') right top / auto 100% no-repeat;
     pointer-events: none;
   }
 
@@ -34,19 +34,15 @@
   }
 }
 
-// Unter 1440px wächst bzw. schrumpft der Brush stufenlos mit (px-Anteil + vw-Anteil):
-// 1440px → 749px breit (wie 52vw), 1024px → ca. 614px, 769px → ca. 531px.
-// So bleibt er auf Tablets rechts und der Textbereich frei.
-@media (max-width: 1440px) {
-  .hero-section::before {
-    width: calc(32.5vw + 281px);
-  }
-}
-
-// Mobile: Inhalt steht untereinander – Brush größer, läuft hinter dem Foto-Kreis aus.
-// Ebenfalls stufenlos: 768px → ca. 715px breit, 320px → ca. 345px.
+// Tablet/Mobile: gold_1 wird durch gold_4 ersetzt, links oben in der Ecke.
+// Die Ebene ist genau so groß wie der sichtbare Brush in gold_4.png (449 × 509 px von 2048 × 736),
+// daher aspect-ratio 449 / 509 und Bildhöhe 736 / 509 ≈ 144.6 % der Ebene.
+// Breite stufenlos: 320px → 224px, ab ca. 686px max. 480px.
 @media (max-width: 768px) {
   .hero-section::before {
-    width: calc(82vw + 85px);
+    inset: 0 auto auto 0;
+    width: clamp(200px, 70vw, 480px);
+    aspect-ratio: 449 / 509;
+    background: url('/assets/imgs/gold_4.png') left top / auto 144.6% no-repeat;
   }
 }

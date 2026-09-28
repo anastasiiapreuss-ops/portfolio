@@ -33,5 +33,12 @@
     "TITLE": "Meine",
     "TITLE_ACCENT": "Skills",
     "SUBTITLE": "TECHNOLOGIEN, MIT DENEN ICH ARBEITE"
+  },
+  "PROJECTS": {
+    "TITLE": "Meine",
+    "TITLE_ACCENT": "Projekte",
+    "JOIN_DESC": "Aufgabenmanager nach dem Vorbild des Kanban-Systems. Aufgaben erstellen, organisieren und per Drag & Drop verschieben.",
+    "MEMORY_DESC": "Memory-Spiel mit wählbaren Themes, Spielern und Spielfeldgrößen.",
+    "POLLO_DESC": "Ein Jump-and-Run-Browserspiel: Hilf Pepe, Münzen und Salsa zu sammeln und das verrückte Huhn zu besiegen."
   }
 }
