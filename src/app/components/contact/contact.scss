@@ -1,0 +1,247 @@
+// --pad-x: seitlicher Abstand der Section.
+.contact-section {
+    --pad-x: var(--space-5);
+    --color-error: #e57373;
+    width: 100%;
+    padding: var(--space-6) var(--pad-x);
+    // Ebene 1: goldener Strich unten links, Ebene 2: dunkler Hintergrund
+    // 4.6 = Bildbreite / Breite des Strichs in gold_3.png (2048 / ~445)
+    background-image: url('/assets/imgs/gold_3.png'), url('/assets/imgs/background.png');
+    background-size: calc(min(22vw, 360px) * 4.6) auto, cover;
+    background-position: left bottom, center top;
+    background-repeat: no-repeat;
+}
+
+// Links Überschrift + Text, rechts das Formular (wie im Design).
+.contact-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-6);
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.contact-intro {
+    flex: 1 1 380px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    h2 {
+        font-family: var(--font-heading);
+        font-size: calc(var(--fs-h1) * 1.25);
+        font-weight: 700;
+        color: var(--color-offwhite);
+        line-height: 1.15;
+    }
+}
+
+.contact-text {
+    display: flex;
+    gap: var(--space-2);
+    font-family: var(--font-body);
+    font-size: calc(var(--fs-body) + 5px);
+    line-height: 1.5;
+    color: var(--color-offwhite);
+}
+
+// Pfeil-Icon (schwarzes PNG) wird als Maske genutzt und mit der
+// Hintergrundfarbe gold eingefärbt – wie die Icons in der About-Section.
+.contact-arrow {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px; // mittig zur ersten Textzeile
+    background-color: var(--color-gold);
+    -webkit-mask-image: url('/assets/icons/icons8-pfeil-100.png');
+    mask-image: url('/assets/icons/icons8-pfeil-100.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
+.contact-form {
+    flex: 1 1 420px;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    // kleiner als vorher, weil jedes Feld schon den Fehler-Platz darunter mitbringt
+    gap: var(--space-1);
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+        width: 100%;
+        padding: 14px var(--space-2);
+        // gleiche Farbe wie die Trennlinien zwischen den Sections (hr.section-divider)
+        border: 2px solid var(--color-divider);
+        border-radius: var(--radius-sm);
+        background: transparent;
+        color: var(--color-offwhite);
+        font-family: var(--font-body);
+        font-size: var(--fs-body);
+        transition: border-color 0.2s, box-shadow 0.2s;
+
+        &::placeholder {
+            color: var(--color-offwhite);
+            opacity: 0.6;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 8px rgba(var(--color-gold-rgb), 0.35);
+        }
+    }
+
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    // Klasse wird im HTML per [class.errorBorder] gesetzt, wenn das Feld ungültig ist
+    .errorBorder,
+    .errorBorder:focus {
+        border-color: var(--color-error);
+        box-shadow: none;
+    }
+}
+
+// Feld + Platz für die Fehlermeldung darunter
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+// Feste Höhe: Der Platz ist immer reserviert, auch ohne Text –
+// so rutscht beim Erscheinen der Meldung nichts nach oben oder unten.
+.errorText {
+    height: 18px;
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+    line-height: 18px;
+    color: var(--color-error);
+}
+
+// Meldung nach dem Senden (unter dem Button, verschiebt keine Felder)
+.sendErrorText {
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    color: var(--color-error);
+}
+
+.passedText {
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    color: var(--color-gold);
+}
+
+.privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-1);
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+    line-height: 1.5;
+    color: var(--color-offwhite);
+    cursor: pointer;
+
+    input {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        margin-top: 1px;
+        accent-color: var(--color-gold);
+        cursor: pointer;
+    }
+
+    a {
+        color: var(--color-gold);
+    }
+}
+
+.send_button {
+    align-self: flex-start;
+    min-width: 200px;
+    padding: 14px var(--space-4);
+    border: 2px solid var(--color-gold);
+    border-radius: var(--radius-sm);
+    background: var(--color-gold);
+    color: var(--color-espresso);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--fs-h3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 10px 24px rgba(var(--color-gold-rgb), 0.35);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-gold);
+        outline-offset: 4px;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+// Label bleibt für Screenreader lesbar, ist aber unsichtbar (Design zeigt nur Placeholder).
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0); // alte Browser
+    clip-path: inset(50%); // moderne Browser
+    white-space: nowrap;
+}
+
+// Tablet/Mobile: Text oben, Formular darunter.
+@media (max-width: 900px) {
+    .contact-section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    }
+
+    .contact-inner {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .contact-intro,
+    .contact-form {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        --pad-x: var(--space-4);
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-section {
+        --pad-x: var(--space-2);
+    }
+
+    .send_button {
+        align-self: stretch;
+    }
+
+    // Sehr schmal: Fehlertexte können umbrechen → Platz für zwei Zeilen reservieren
+    .errorText {
+        height: 36px;
+    }
+}

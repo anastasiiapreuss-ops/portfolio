@@ -1,1 +1,96 @@
-<p>contact works!</p>
+<section class="contact-section">
+  <section class="contact-inner">
+    <section class="contact-intro">
+      <h2>{{ 'CONTACT.TITLE' | translate }}</h2>
+      <p class="contact-text">
+        <span class="contact-arrow"></span>
+        <span>
+          {{ 'CONTACT.TEXT_1' | translate }}
+          <br />
+          {{ 'CONTACT.TEXT_2' | translate }}
+        </span>
+      </p>
+    </section>
+
+    <form class="contact-form" [formGroup]="sendMailForm" (ngSubmit)="submitSendMailForm()">
+      <!-- Jedes Feld hat darunter ein <p class="errorText"> mit fester Höhe.
+           Es ist immer da (reserviert den Platz), nur der Text erscheint per @if. -->
+      <div class="field">
+        <label class="visually-hidden" for="senderName">{{ 'CONTACT.NAME' | translate }}</label>
+        <input
+          [class.errorBorder]="!senderName?.valid && senderName?.touched"
+          type="text"
+          id="senderName"
+          formControlName="senderName"
+          [placeholder]="'CONTACT.NAME' | translate"
+        />
+        <p class="errorText">
+          @if (!senderName?.valid && senderName?.touched) {
+            {{ 'CONTACT.NAME_ERROR' | translate }}
+          }
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="visually-hidden" for="email">{{ 'CONTACT.EMAIL' | translate }}</label>
+        <input
+          [class.errorBorder]="!email?.valid && email?.touched"
+          type="email"
+          id="email"
+          formControlName="email"
+          [placeholder]="'CONTACT.EMAIL' | translate"
+        />
+        <p class="errorText">
+          @if (!email?.valid && email?.touched) {
+            {{ 'CONTACT.EMAIL_ERROR' | translate }}
+          }
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="visually-hidden" for="message">{{ 'CONTACT.MESSAGE' | translate }}</label>
+        <textarea
+          [class.errorBorder]="!message?.valid && message?.touched"
+          id="message"
+          rows="4"
+          formControlName="message"
+          [placeholder]="'CONTACT.MESSAGE' | translate"
+        ></textarea>
+        <p class="errorText">
+          @if (!message?.valid && message?.touched) {
+            {{ 'CONTACT.MESSAGE_ERROR' | translate }}
+          }
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="privacy" for="privacy">
+          <input type="checkbox" id="privacy" formControlName="privacy" />
+          <span>
+            {{ 'CONTACT.PRIVACY_1' | translate }}
+            <!-- Platzhalter-Link: auf die Datenschutz-Seite ändern, sobald es sie gibt -->
+            <a href="#">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
+            {{ 'CONTACT.PRIVACY_2' | translate }}
+          </span>
+        </label>
+        <p class="errorText">
+          @if (!privacy?.valid && privacy?.touched) {
+            {{ 'CONTACT.PRIVACY_ERROR' | translate }}
+          }
+        </p>
+      </div>
+
+      <button class="send_button" type="submit" [disabled]="sendMailForm.invalid">
+        {{ 'CONTACT.SEND' | translate }}
+      </button>
+
+      @if (sendStatus === 'success') {
+        <p class="passedText">{{ 'CONTACT.SUCCESS' | translate }}</p>
+      } @else if (sendStatus === 'error') {
+        <p class="sendErrorText">{{ 'CONTACT.SEND_ERROR' | translate }}</p>
+      }
+    </form>
+  </section>
+</section>
+
+<hr class="section-divider" />

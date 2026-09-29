@@ -40,5 +40,23 @@
     "JOIN_DESC": "Task manager inspired by the Kanban system. Create, organize and move tasks via drag and drop.",
     "MEMORY_DESC": "Memory game with selectable themes, players and board sizes.",
     "POLLO_DESC": "A jump-and-run browser game: help Pepe collect coins and salsa and defeat the crazy hen."
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "TEXT_1": "Got a project in mind?",
+    "TEXT_2": "Let's create something amazing together!",
+    "NAME": "Your name",
+    "EMAIL": "Your email",
+    "MESSAGE": "Your message",
+    "NAME_ERROR": "Please enter a valid name (letters only, at least 3).",
+    "EMAIL_ERROR": "Please enter a valid email address.",
+    "MESSAGE_ERROR": "Please write a message (at least 3 characters).",
+    "PRIVACY_1": "I have read the",
+    "PRIVACY_LINK": "privacy policy",
+    "PRIVACY_2": "and agree to the processing of my data.",
+    "PRIVACY_ERROR": "Please accept the privacy policy.",
+    "SEND": "Send message",
+    "SUCCESS": "Thank you! Your message has been sent.",
+    "SEND_ERROR": "Sending failed. Please try again later."
   }
 }

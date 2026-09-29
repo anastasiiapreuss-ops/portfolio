@@ -40,5 +40,23 @@
     "JOIN_DESC": "Aufgabenmanager nach dem Vorbild des Kanban-Systems. Aufgaben erstellen, organisieren und per Drag & Drop verschieben.",
     "MEMORY_DESC": "Memory-Spiel mit wählbaren Themes, Spielern und Spielfeldgrößen.",
     "POLLO_DESC": "Ein Jump-and-Run-Browserspiel: Hilf Pepe, Münzen und Salsa zu sammeln und das verrückte Huhn zu besiegen."
+  },
+  "CONTACT": {
+    "TITLE": "Kontakt",
+    "TEXT_1": "Du hast ein Projekt im Kopf?",
+    "TEXT_2": "Lass uns gemeinsam etwas Großartiges erschaffen!",
+    "NAME": "Dein Name",
+    "EMAIL": "Deine E-Mail",
+    "MESSAGE": "Deine Nachricht",
+    "NAME_ERROR": "Bitte gib einen gültigen Namen ein (nur Buchstaben, mind. 3).",
+    "EMAIL_ERROR": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "MESSAGE_ERROR": "Bitte schreib eine Nachricht (mind. 3 Zeichen).",
+    "PRIVACY_1": "Ich habe die",
+    "PRIVACY_LINK": "Datenschutzerklärung",
+    "PRIVACY_2": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "PRIVACY_ERROR": "Bitte stimme der Datenschutzerklärung zu.",
+    "SEND": "Nachricht senden",
+    "SUCCESS": "Danke! Deine Nachricht wurde gesendet.",
+    "SEND_ERROR": "Senden fehlgeschlagen. Bitte versuche es später erneut."
   }
 }
