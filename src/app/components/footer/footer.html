@@ -1,1 +1,24 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer-left">
+    <a class="footer-name" routerLink="/">Anastasiia Preuß<span class="footer-dot"></span></a>
+    <nav class="footer-links" [attr.aria-label]="'FOOTER.NAV_LABEL' | translate">
+      <a routerLink="/imprint">{{ 'FOOTER.IMPRINT' | translate }}</a>
+      <a routerLink="/privacy">{{ 'FOOTER.PRIVACY' | translate }}</a>
+    </nav>
+  </div>
+
+  <p class="footer-copy">© Anastasiia Preuß {{ year }}</p>
+
+  <div class="footer-socials">
+    <a href="https://github.com/anastasiiapreuss-ops?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub">
+      <img src="assets/icons/8. Github button.svg" alt="" />
+    </a>
+    <a href="mailto:anapreuss95@gmail.com" aria-label="E-Mail">
+      <img src="assets/icons/9. Email button.svg" alt="" />
+    </a>
+    <!-- Platzhalter-Link: deine LinkedIn-URL eintragen (auch im Hero) -->
+    <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <img src="assets/icons/10. Linkedin button.svg" alt="" />
+    </a>
+  </div>
+</footer>

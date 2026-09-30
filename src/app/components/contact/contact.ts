@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [ReactiveFormsModule, TranslatePipe],
+  imports: [ReactiveFormsModule, RouterLink, TranslatePipe],
   selector: 'app-contact',
   styleUrl: './contact.scss',
   templateUrl: './contact.html',
@@ -33,8 +34,12 @@ export class Contact {
     }),
   });
 
-  // 'idle' = noch nichts gesendet, 'success' / 'error' = Ergebnis des letzten Sendens
-  sendStatus: 'idle' | 'success' | 'error' = 'idle';
+  // 'idle' = kein Toast sichtbar, 'success' / 'error' = Toast mit Ergebnis des letzten Sendens
+  // signal, weil die App ohne zone.js läuft: nur so merkt Angular die Änderung nach await / setTimeout
+  sendStatus = signal<'idle' | 'success' | 'error'>('idle');
+
+  // Merkt sich den laufenden Timer, damit ein neuer Toast den alten Timer abbrechen kann
+  private toastTimer?: ReturnType<typeof setTimeout>;
 
   get senderName() {
     return this.sendMailForm.get('senderName');
@@ -71,15 +76,22 @@ export class Contact {
       const result = await httpResponse.json(); // Body der Antwort von JSON-String zurück in ein JS-Objekt umwandeln
 
       if (result.success) {
-        this.sendStatus = 'success';
+        this.showToast('success');
         this.sendMailForm.reset();
       } else {
-        this.sendStatus = 'error';
+        this.showToast('error');
         console.error('Fehler beim Senden:', result.error);
       }
     } catch (error) {
-      this.sendStatus = 'error';
+      this.showToast('error');
       console.error('Netzwerkfehler:', error);
     }
+  }
+
+  // Zeigt den Toast und blendet ihn nach 4 Sekunden automatisch wieder aus
+  private showToast(status: 'success' | 'error') {
+    clearTimeout(this.toastTimer); // alten Timer stoppen, falls noch ein Toast offen ist
+    this.sendStatus.set(status);
+    this.toastTimer = setTimeout(() => this.sendStatus.set('idle'), 4000);
   }
 }

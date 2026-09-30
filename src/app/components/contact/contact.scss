@@ -128,17 +128,81 @@
     color: var(--color-error);
 }
 
-// Meldung nach dem Senden (unter dem Button, verschiebt keine Felder)
-.sendErrorText {
-    font-family: var(--font-body);
-    font-size: var(--fs-body);
-    color: var(--color-error);
+// Toast nach dem Senden: fixed = klebt am Bildschirm, nicht an der Section.
+// Desktop unten rechts, Mobile unten mittig (siehe Media Query unten).
+.toast-container {
+    position: fixed;
+    right: var(--space-3);
+    bottom: var(--space-3);
+    z-index: 1000;
 }
 
-.passedText {
+.toast {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    max-width: 380px;
+    padding: var(--space-2) var(--space-3);
+    border: 2px solid var(--color-gold);
+    border-radius: var(--radius-md);
+    background: var(--color-navy);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
     font-family: var(--font-body);
     font-size: var(--fs-body);
+    line-height: 1.4;
+    color: var(--color-offwhite);
+
+    // Fehler-Variante: rote statt goldene Farben
+    &.toast-error {
+        border-color: var(--color-error);
+
+        .toast-icon {
+            border-color: var(--color-error);
+            color: var(--color-error);
+        }
+    }
+}
+
+// Kreis mit ✓ bzw. ! darin
+.toast-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--color-gold);
+    border-radius: 50%;
     color: var(--color-gold);
+    font-weight: 700;
+}
+
+// Diese Klassen setzt Angular kurz beim Erscheinen / Verschwinden (animate.enter / animate.leave)
+.toast-enter {
+    animation: toast-slide-in 0.35s ease-out;
+}
+
+.toast-leave {
+    animation: toast-slide-in 0.3s ease-in reverse; // gleiche Animation rückwärts
+}
+
+@keyframes toast-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Wer im Betriebssystem "Bewegung reduzieren" eingestellt hat, bekommt keine Animation
+@media (prefers-reduced-motion: reduce) {
+    .toast-enter,
+    .toast-leave {
+        animation: none;
+    }
 }
 
 .privacy {
@@ -228,6 +292,17 @@
 @media (max-width: 768px) {
     .contact-section {
         --pad-x: var(--space-4);
+    }
+
+    // Mobile: Toast unten mittig. left + right = 0 und margin auto zentrieren ihn,
+    // width: max-content macht ihn nur so breit wie sein Inhalt.
+    .toast-container {
+        left: 0;
+        right: 0;
+        bottom: var(--space-2);
+        width: max-content;
+        max-width: calc(100% - 2 * var(--space-2));
+        margin: 0 auto;
     }
 }
 

@@ -21,6 +21,17 @@
   gap: var(--space-5);
 }
 
+// flex: verhindert eine kleine Lücke unter dem Bild im Link
+.logo_link {
+  display: flex;
+  border-radius: var(--radius-sm);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+}
+
 .ap_icon {
   width: 72px;
   height: 72px;

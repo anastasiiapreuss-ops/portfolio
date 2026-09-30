@@ -58,5 +58,138 @@
     "SEND": "Send message",
     "SUCCESS": "Thank you! Your message has been sent.",
     "SEND_ERROR": "Sending failed. Please try again later."
+  },
+  "FOOTER": {
+    "NAV_LABEL": "Legal",
+    "IMPRINT": "Legal Notice",
+    "PRIVACY": "Privacy Policy"
+  },
+  "LEGAL": {
+    "EYEBROW": "LEGAL",
+    "BACK": "Back to homepage"
+  },
+  "IMPRINT": {
+    "TITLE": "Legal Notice",
+    "SECTIONS": [
+      {
+        "HEADING": "Information according to § 5 DDG (German Digital Services Act)",
+        "TEXT": ["{{name}}\n{{street}}\n{{city}}\nGermany"]
+      },
+      {
+        "HEADING": "Contact",
+        "TEXT": ["Email: {{email}}"]
+      },
+      {
+        "HEADING": "Responsible for content according to § 18 (2) MStV",
+        "TEXT": ["{{name}}\n{{street}}\n{{city}}"]
+      },
+      {
+        "HEADING": "Liability for content",
+        "TEXT": [
+          "The content of this website has been created with the greatest care. However, I cannot guarantee that the content is accurate, complete or up to date.",
+          "As a service provider, I am responsible for my own content on these pages in accordance with general law. However, I am not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. As soon as I become aware of any legal violations, I will remove the content concerned immediately."
+        ]
+      },
+      {
+        "HEADING": "Liability for links",
+        "TEXT": [
+          "This website contains links to external third-party websites (e.g. GitHub, LinkedIn) whose content I have no influence over. The respective provider or operator is always responsible for this external content. No legal violations were apparent at the time of linking. If I become aware of any legal violations, I will remove such links immediately."
+        ]
+      },
+      {
+        "HEADING": "Copyright",
+        "TEXT": [
+          "The content I have created on this website (texts, design, code) is subject to German copyright law. Reproduction, editing, distribution and any kind of use beyond the limits of copyright law require my written consent.",
+          "Some icons are provided by Icons8 (https://icons8.com)."
+        ]
+      }
+    ]
+  },
+  "PRIVACY": {
+    "TITLE": "Privacy Policy",
+    "SECTIONS": [
+      {
+        "HEADING": "1. Controller",
+        "TEXT": [
+          "The party responsible for data processing on this website is:",
+          "{{name}}\n{{street}}\n{{city}}\nGermany\nEmail: {{email}}"
+        ]
+      },
+      {
+        "HEADING": "2. General information",
+        "TEXT": [
+          "Protecting your personal data is important to me. I treat your personal data confidentially and in accordance with statutory data protection regulations, in particular the General Data Protection Regulation (GDPR). Personal data is any data that can be used to identify you personally.",
+          "This website does not use cookies or any analytics or tracking tools, and it does not load external services such as Google Fonts."
+        ]
+      },
+      {
+        "HEADING": "3. Hosting and server log files",
+        "TEXT": [
+          "This website is hosted by the following provider:",
+          "{{hostName}}\n{{hostAddress}}",
+          "When you visit the website, the server automatically collects information that your browser transmits (server log files):"
+        ],
+        "LIST": [
+          "IP address",
+          "Date and time of the request",
+          "Browser type and version",
+          "Operating system used",
+          "Referrer URL (the previously visited page)"
+        ],
+        "AFTER": [
+          "This data is not combined with other data sources. Processing is based on Art. 6 (1) (f) GDPR: I have a legitimate interest in providing the website in a technically error-free and secure manner."
+        ]
+      },
+      {
+        "HEADING": "4. Contact form",
+        "TEXT": ["If you send me a message via the contact form, the following information is processed:"],
+        "LIST": ["Name", "Email address", "Message"],
+        "AFTER": [
+          "The data is sent to me by email and used exclusively to handle your enquiry and any follow-up questions. It is not passed on to third parties.",
+          "The legal basis is your consent (Art. 6 (1) (a) GDPR), which you give via the checkbox in the form, and – if your enquiry relates to a contract – Art. 6 (1) (b) GDPR. You can withdraw your consent at any time by sending me an email. The lawfulness of the processing carried out before the withdrawal remains unaffected.",
+          "Your data remains with me until the purpose no longer applies (e.g. after your enquiry has been dealt with) or you request its deletion. Statutory retention periods remain unaffected."
+        ]
+      },
+      {
+        "HEADING": "5. Contact by email",
+        "TEXT": [
+          "If you email me directly, your email address and the content of your message will be stored in order to answer your enquiry. The same principles apply as for the contact form."
+        ]
+      },
+      {
+        "HEADING": "6. External links",
+        "TEXT": [
+          "This website contains links to GitHub and LinkedIn. Only when you click on such a link are you redirected to the respective provider's website, where their privacy policy applies. No data is transferred to these providers beforehand."
+        ]
+      },
+      {
+        "HEADING": "7. SSL/TLS encryption",
+        "TEXT": [
+          "For security reasons, this website uses SSL or TLS encryption. You can recognise an encrypted connection by “https://” in your browser's address bar."
+        ]
+      },
+      {
+        "HEADING": "8. Your rights",
+        "TEXT": ["You have the following rights regarding your personal data at any time:"],
+        "LIST": [
+          "Access to your stored data (Art. 15 GDPR)",
+          "Rectification of inaccurate data (Art. 16 GDPR)",
+          "Erasure of your data (Art. 17 GDPR)",
+          "Restriction of processing (Art. 18 GDPR)",
+          "Data portability (Art. 20 GDPR)",
+          "Objection to processing (Art. 21 GDPR)",
+          "Withdrawal of consent given (Art. 7 (3) GDPR)"
+        ],
+        "AFTER": [
+          "Simply contact me by email. You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), for example the authority where you live."
+        ]
+      },
+      {
+        "HEADING": "9. Updates",
+        "TEXT": [
+          "Last updated: September 2026. I will update this privacy policy whenever the website or legal requirements change."
+        ]
+      }
+    ]
   }
 }

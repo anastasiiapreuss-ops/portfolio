@@ -1,11 +1,15 @@
 <nav class="header_bar">
   <div class="header_left">
-    <img class="ap_icon" src="assets/icons/AP_icon.png" alt="Anastasiia Preuß Logo">
+    <!-- routerLink statt href: funktioniert auch auf Impressum/Datenschutz.
+         fragment="…" hängt #about-me usw. an und scrollt zur Section -->
+    <a class="logo_link" routerLink="/" aria-label="Home">
+      <img class="ap_icon" src="assets/icons/AP_icon.png" alt="Anastasiia Preuß Logo">
+    </a>
     <div class="header_links">
-      <a href="#about-me">{{ 'HEADER.ABOUT' | translate }}</a>
-      <a href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
-      <a href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
-      <a href="#contact">{{ 'HEADER.CONTACT' | translate }}</a>
+      <a routerLink="/" fragment="about-me">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a routerLink="/" fragment="skills">{{ 'HEADER.SKILLS' | translate }}</a>
+      <a routerLink="/" fragment="projects">{{ 'HEADER.PROJECTS' | translate }}</a>
+      <a routerLink="/" fragment="contact">{{ 'HEADER.CONTACT' | translate }}</a>
     </div>
   </div>
 
@@ -13,4 +17,4 @@
     <button type="button" class="lang_btn" [class.active]="isActive('de')" (click)="useLanguage('de')">DE</button>
     <button type="button" class="lang_btn" [class.active]="isActive('en')" (click)="useLanguage('en')">EN</button>
   </div>
-</nav> 
+</nav>

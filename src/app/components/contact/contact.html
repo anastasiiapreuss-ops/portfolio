@@ -68,8 +68,7 @@
           <input type="checkbox" id="privacy" formControlName="privacy" />
           <span>
             {{ 'CONTACT.PRIVACY_1' | translate }}
-            <!-- Platzhalter-Link: auf die Datenschutz-Seite ändern, sobald es sie gibt -->
-            <a href="#">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
+            <a routerLink="/privacy">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a>
             {{ 'CONTACT.PRIVACY_2' | translate }}
           </span>
         </label>
@@ -83,14 +82,24 @@
       <button class="send_button" type="submit" [disabled]="sendMailForm.invalid">
         {{ 'CONTACT.SEND' | translate }}
       </button>
-
-      @if (sendStatus === 'success') {
-        <p class="passedText">{{ 'CONTACT.SUCCESS' | translate }}</p>
-      } @else if (sendStatus === 'error') {
-        <p class="sendErrorText">{{ 'CONTACT.SEND_ERROR' | translate }}</p>
-      }
     </form>
   </section>
-</section>
 
-<hr class="section-divider" />
+  <!-- Toast nach dem Senden. Der Container ist immer da (aria-live),
+       damit Screenreader den Text vorlesen, sobald der Toast erscheint. -->
+  <div class="toast-container" role="status" aria-live="polite">
+    @if (sendStatus() !== 'idle') {
+      <div
+        class="toast"
+        [class.toast-error]="sendStatus() === 'error'"
+        animate.enter="toast-enter"
+        animate.leave="toast-leave"
+      >
+        <span class="toast-icon" aria-hidden="true">{{ sendStatus() === 'success' ? '✓' : '!' }}</span>
+        <p>
+          {{ (sendStatus() === 'success' ? 'CONTACT.SUCCESS' : 'CONTACT.SEND_ERROR') | translate }}
+        </p>
+      </div>
+    }
+  </div>
+</section>

@@ -58,5 +58,138 @@
     "SEND": "Nachricht senden",
     "SUCCESS": "Danke! Deine Nachricht wurde gesendet.",
     "SEND_ERROR": "Senden fehlgeschlagen. Bitte versuche es später erneut."
+  },
+  "FOOTER": {
+    "NAV_LABEL": "Rechtliches",
+    "IMPRINT": "Impressum",
+    "PRIVACY": "Datenschutz"
+  },
+  "LEGAL": {
+    "EYEBROW": "RECHTLICHES",
+    "BACK": "Zurück zur Startseite"
+  },
+  "IMPRINT": {
+    "TITLE": "Impressum",
+    "SECTIONS": [
+      {
+        "HEADING": "Angaben gemäß § 5 DDG",
+        "TEXT": ["{{name}}\n{{street}}\n{{city}}\nDeutschland"]
+      },
+      {
+        "HEADING": "Kontakt",
+        "TEXT": ["E-Mail: {{email}}"]
+      },
+      {
+        "HEADING": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+        "TEXT": ["{{name}}\n{{street}}\n{{city}}"]
+      },
+      {
+        "HEADING": "Haftung für Inhalte",
+        "TEXT": [
+          "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen.",
+          "Als Diensteanbieterin bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Ich bin jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Sobald mir Rechtsverletzungen bekannt werden, entferne ich die betreffenden Inhalte umgehend."
+        ]
+      },
+      {
+        "HEADING": "Haftung für Links",
+        "TEXT": [
+          "Diese Website enthält Links zu externen Websites Dritter (z. B. GitHub, LinkedIn), auf deren Inhalte ich keinen Einfluss habe. Für diese fremden Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar. Werden mir Rechtsverletzungen bekannt, entferne ich derartige Links umgehend."
+        ]
+      },
+      {
+        "HEADING": "Urheberrecht",
+        "TEXT": [
+          "Die von mir erstellten Inhalte auf dieser Website (Texte, Design, Code) unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung.",
+          "Einige Icons stammen von Icons8 (https://icons8.com)."
+        ]
+      }
+    ]
+  },
+  "PRIVACY": {
+    "TITLE": "Datenschutzerklärung",
+    "SECTIONS": [
+      {
+        "HEADING": "1. Verantwortliche Stelle",
+        "TEXT": [
+          "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
+          "{{name}}\n{{street}}\n{{city}}\nDeutschland\nE-Mail: {{email}}"
+        ]
+      },
+      {
+        "HEADING": "2. Allgemeines",
+        "TEXT": [
+          "Der Schutz deiner persönlichen Daten ist mir wichtig. Ich behandle deine personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften, insbesondere der Datenschutz-Grundverordnung (DSGVO). Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst.",
+          "Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools und bindet keine externen Dienste wie Google Fonts ein."
+        ]
+      },
+      {
+        "HEADING": "3. Hosting und Server-Logfiles",
+        "TEXT": [
+          "Diese Website wird bei folgendem Anbieter gehostet:",
+          "{{hostName}}\n{{hostAddress}}",
+          "Beim Aufruf der Website erfasst der Server automatisch Informationen, die dein Browser übermittelt (Server-Logfiles):"
+        ],
+        "LIST": [
+          "IP-Adresse",
+          "Datum und Uhrzeit der Anfrage",
+          "Browsertyp und -version",
+          "verwendetes Betriebssystem",
+          "Referrer-URL (die zuvor besuchte Seite)"
+        ],
+        "AFTER": [
+          "Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO: Ich habe ein berechtigtes Interesse an einer technisch fehlerfreien und sicheren Bereitstellung der Website."
+        ]
+      },
+      {
+        "HEADING": "4. Kontaktformular",
+        "TEXT": ["Wenn du mir über das Kontaktformular eine Nachricht schickst, werden folgende Angaben verarbeitet:"],
+        "LIST": ["Name", "E-Mail-Adresse", "Nachricht"],
+        "AFTER": [
+          "Die Daten werden per E-Mail an mich übermittelt und ausschließlich zur Bearbeitung deiner Anfrage und für mögliche Anschlussfragen verwendet. Eine Weitergabe an Dritte findet nicht statt.",
+          "Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die du über die Checkbox im Formular erteilst, sowie – wenn deine Anfrage auf einen Vertrag abzielt – Art. 6 Abs. 1 lit. b DSGVO. Du kannst deine Einwilligung jederzeit per E-Mail an mich widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.",
+          "Deine Daten bleiben bei mir, bis der Zweck entfällt (z. B. nach abgeschlossener Bearbeitung deiner Anfrage) oder du die Löschung verlangst. Gesetzliche Aufbewahrungsfristen bleiben unberührt."
+        ]
+      },
+      {
+        "HEADING": "5. Kontakt per E-Mail",
+        "TEXT": [
+          "Wenn du mir direkt eine E-Mail schreibst, werden deine E-Mail-Adresse und der Inhalt deiner Nachricht gespeichert, um deine Anfrage zu beantworten. Es gelten dieselben Grundsätze wie beim Kontaktformular."
+        ]
+      },
+      {
+        "HEADING": "6. Externe Links",
+        "TEXT": [
+          "Auf dieser Website befinden sich Links zu GitHub und LinkedIn. Erst wenn du einen solchen Link anklickst, wirst du auf die Seite des jeweiligen Anbieters weitergeleitet; dort gelten dessen Datenschutzbestimmungen. Vorher werden keine Daten an diese Anbieter übertragen."
+        ]
+      },
+      {
+        "HEADING": "7. SSL-/TLS-Verschlüsselung",
+        "TEXT": [
+          "Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennst du an „https://“ in der Adresszeile deines Browsers."
+        ]
+      },
+      {
+        "HEADING": "8. Deine Rechte",
+        "TEXT": ["Du hast jederzeit folgende Rechte bezüglich deiner personenbezogenen Daten:"],
+        "LIST": [
+          "Auskunft über deine gespeicherten Daten (Art. 15 DSGVO)",
+          "Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+          "Löschung deiner Daten (Art. 17 DSGVO)",
+          "Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+          "Datenübertragbarkeit (Art. 20 DSGVO)",
+          "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+          "Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)"
+        ],
+        "AFTER": [
+          "Wende dich dazu einfach per E-Mail an mich. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), zum Beispiel bei der Behörde deines Wohnorts."
+        ]
+      },
+      {
+        "HEADING": "9. Aktualität",
+        "TEXT": [
+          "Stand: September 2026. Ich passe diese Datenschutzerklärung an, sobald sich die Website oder die rechtlichen Vorgaben ändern."
+        ]
+      }
+    ]
   }
 }

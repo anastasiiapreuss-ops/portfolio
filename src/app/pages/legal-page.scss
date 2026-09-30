@@ -1,0 +1,107 @@
+// Gemeinsame Styles für Impressum und Datenschutz (beide Komponenten nutzen diese Datei).
+.legal-page {
+    --pad-x: var(--space-5);
+    padding: var(--space-5) var(--pad-x) var(--space-6);
+    background: url('/assets/imgs/background.png') center top / cover no-repeat;
+}
+
+// Lange Texte lesen sich schmal besser → max. 860px breit, mittig
+.legal-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    font-family: var(--font-body);
+    color: var(--color-offwhite);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: var(--space-4);
+    font-size: var(--fs-body);
+    color: var(--color-gold);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-gold);
+        outline-offset: 4px;
+    }
+}
+
+// kleine Überschrift mit goldenem Strich (wie "I AM ———" im Hero)
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: var(--fs-small);
+    letter-spacing: 0.35em;
+}
+
+.eyebrow-line {
+    width: 60px;
+    height: 2px;
+    background: var(--color-gold);
+}
+
+h1 {
+    margin-bottom: var(--space-4);
+    font-family: var(--font-heading);
+    font-size: calc(var(--fs-h1) * 1.25);
+    font-weight: 700;
+    line-height: 1.15;
+    overflow-wrap: anywhere; // "Datenschutzerklärung" ist lang → darf auf Mobile umbrechen
+}
+
+.legal-section + .legal-section {
+    margin-top: var(--space-4);
+}
+
+h2 {
+    margin-bottom: var(--space-2);
+    font-family: var(--font-heading);
+    font-size: calc(var(--fs-h3) + 4px);
+    color: var(--color-gold);
+}
+
+p,
+li {
+    font-size: var(--fs-body);
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+// pre-line: "\n" im JSON wird als Zeilenumbruch angezeigt (z. B. bei der Adresse)
+p {
+    white-space: pre-line;
+}
+
+p + p {
+    margin-top: var(--space-1);
+}
+
+ul {
+    margin: var(--space-1) 0;
+    padding-left: var(--space-3);
+}
+
+li::marker {
+    color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+    .legal-page {
+        --pad-x: var(--space-4);
+        padding-top: var(--space-4);
+    }
+}
+
+@media (max-width: 400px) {
+    .legal-page {
+        --pad-x: var(--space-2);
+    }
+}

@@ -1,0 +1,35 @@
+<app-header />
+<hr class="section-divider" />
+
+<main class="legal-page">
+  <div class="legal-inner">
+    <a class="back-link" routerLink="/">← {{ 'LEGAL.BACK' | translate }}</a>
+
+    <p class="eyebrow">
+      <span>{{ 'LEGAL.EYEBROW' | translate }}</span>
+      <span class="eyebrow-line"></span>
+    </p>
+    <h1>{{ 'PRIVACY.TITLE' | translate }}</h1>
+
+    <!-- Jeder Abschnitt: Überschrift, Absätze (TEXT), optional eine Liste (LIST)
+         und optional Absätze nach der Liste (AFTER) -->
+    @for (section of 'PRIVACY.SECTIONS' | translate: legal; track $index) {
+      <section class="legal-section">
+        <h2>{{ section.HEADING }}</h2>
+        @for (paragraph of section.TEXT; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+        @if (section.LIST) {
+          <ul>
+            @for (item of section.LIST; track $index) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        }
+        @for (paragraph of section.AFTER; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </section>
+    }
+  </div>
+</main>

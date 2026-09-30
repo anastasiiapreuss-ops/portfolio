@@ -1,0 +1,24 @@
+<app-header />
+<hr class="section-divider" />
+
+<main class="legal-page">
+  <div class="legal-inner">
+    <a class="back-link" routerLink="/">← {{ 'LEGAL.BACK' | translate }}</a>
+
+    <p class="eyebrow">
+      <span>{{ 'LEGAL.EYEBROW' | translate }}</span>
+      <span class="eyebrow-line"></span>
+    </p>
+    <h1>{{ 'IMPRINT.TITLE' | translate }}</h1>
+
+    <!-- SECTIONS ist in de.json / en.json eine Liste (Array) von Abschnitten -->
+    @for (section of 'IMPRINT.SECTIONS' | translate: legal; track $index) {
+      <section class="legal-section">
+        <h2>{{ section.HEADING }}</h2>
+        @for (paragraph of section.TEXT; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </section>
+    }
+  </div>
+</main>
