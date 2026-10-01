@@ -36,6 +36,7 @@
 
   /* Layout */
   --content-max-width: 1440px;
+  --header-height: 122px; /* Logo 72px + 2 × 24px Padding + 2px Linie */
 }
 
 * {
@@ -46,6 +47,11 @@
 html,
 body {
   height: 100%;
+}
+
+// Sprungziele (#about-me usw.) nicht unter dem fixierten Header verstecken
+html {
+  scroll-padding-top: var(--header-height);
 }
 
 body {

@@ -8,6 +8,8 @@
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  // Platz für den fixierten Header, damit der Hero nicht darunter rutscht
+  padding-top: var(--header-height);
 
   // Goldener Brush (gold_1) als eigene dekorative Ebene oben rechts.
   // Die Ebene füllt die ganze Hero-Section (mind. 100vh, reicht bis zur About-Me-Section),
@@ -20,7 +22,15 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url('/assets/imgs/gold_1.png') right top / auto 100% no-repeat;
+    // Brush unverzerrt über die volle Höhe (bis About me).
+    // Problem: Breite hängt an der Höhe → bei schmalen Fenstern wächst er in den Text.
+    // Lösung: statt stauchen wird das Bild nach rechts aus dem Bildschirm geschoben.
+    // Brush = rechte 42 % des Bildes (2020 × 778) ≈ 0.42 × 260vh ≈ 109vh breit.
+    // Er soll höchstens 55vw einnehmen → Rest (109vh − 55vw) rutscht rechts raus.
+    // min(0px, …): auf breiten Bildschirmen wird nichts verschoben.
+    background: url('/assets/imgs/gold_1.png') no-repeat;
+    background-size: auto 100%;
+    background-position: right min(0px, calc(55vw - 109vh)) top;
     pointer-events: none;
   }
 

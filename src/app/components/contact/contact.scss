@@ -315,6 +315,24 @@
         align-self: stretch;
     }
 
+    // Intro-Text kleiner, Pfeil passend dazu
+    .contact-text {
+        gap: var(--space-1);
+        font-size: calc(var(--fs-body) + 1px);
+    }
+
+    .contact-arrow {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+    }
+
+    // nur der Platzhalter wird kleiner, der getippte Text bleibt gleich groß
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        font-size: calc(var(--fs-small) + 1px);
+    }
+
     // Sehr schmal: Fehlertexte können umbrechen → Platz für zwei Zeilen reservieren
     .errorText {
         height: 36px;

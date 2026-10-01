@@ -203,13 +203,18 @@
         padding-bottom: var(--space-5);
     }
 
+    // untereinander und linksbündig (nicht mittig)
     .about-inner {
         flex-direction: column;
-        gap: var(--space-5);
+        align-items: flex-start;
+        gap: 52px;
     }
 
+    // flex: none – sonst wird die flex-basis (480px / 380px) in der Spalte zur
+    // Mindesthöhe und unter dem Button entsteht leerer Platz
     .about-content,
     .about-highlights {
+        flex: none;
         max-width: 100%;
     }
 
@@ -222,5 +227,48 @@
     .about-section {
         padding-left: var(--space-4);
         padding-right: var(--space-4);
+    }
+}
+
+// Highlights (Icons + Texte) auf kleinen Handys kompakter
+@media (max-width: 450px) {
+    .about-text {
+        font-size: var(--fs-body);
+    }
+
+    .about-label {
+        font-size: calc(var(--fs-body) + 2px);
+    }
+
+    .highlight_row {
+        gap: var(--space-2);
+        padding: var(--space-2) 0;
+    }
+
+    .highlight_icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .highlight_icon_glyph {
+        width: 21px;
+        height: 21px;
+    }
+
+    .highlight_title {
+        font-size: var(--fs-body);
+    }
+
+    .highlight_desc {
+        font-size: calc(var(--fs-small) + 1px);
+    }
+}
+
+// "Mehr erfahren"-Button auf kleinen Handys kleiner
+@media (max-width: 400px) {
+    .more_button {
+        width: 240px;
+        padding: 14px var(--space-3);
+        font-size: var(--fs-body);
     }
 }

@@ -178,8 +178,14 @@
     }
 
     // Eine Spalte: Bild nimmt die volle Breite, höchstens 560px.
+    // Eine Spalte: Bild nimmt die volle Breite, höchstens 560px.
     .project_image img {
         width: min(100%, 560px);
+    }
+
+    // Text genauso breit wie das Bild darüber
+    .project_desc {
+        max-width: 560px;
     }
 }
 
@@ -196,8 +202,24 @@
     }
 
     .project_btn {
-        flex: 1 1 0;
         min-width: 120px;
-        padding: 12px var(--space-2);
+        padding: 10px var(--space-2);
+        font-size: var(--fs-body);
+    }
+
+    // Tags kleiner und alle in einer Zeile
+    .project_tags {
+        flex-wrap: nowrap;
+        gap: 6px;
+
+        li {
+            padding: 4px 10px;
+            font-size: var(--fs-small);
+            white-space: nowrap;
+        }
+    }
+
+    .project_desc {
+        font-size: var(--fs-body);
     }
 }

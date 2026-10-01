@@ -2,7 +2,7 @@
   <div class="header_left">
     <!-- routerLink statt href: funktioniert auch auf Impressum/Datenschutz.
          fragment="…" hängt #about-me usw. an und scrollt zur Section -->
-    <a class="logo_link" routerLink="/" aria-label="Home">
+    <a class="logo_link" routerLink="/" aria-label="Home" (click)="closeMenu()">
       <img class="ap_icon" src="assets/icons/AP_icon.png" alt="Anastasiia Preuß Logo">
     </a>
     <div class="header_links">
@@ -13,8 +13,32 @@
     </div>
   </div>
 
-  <div class="lang_toggle">
-    <button type="button" class="lang_btn" [class.active]="isActive('de')" (click)="useLanguage('de')">DE</button>
-    <button type="button" class="lang_btn" [class.active]="isActive('en')" (click)="useLanguage('en')">EN</button>
+  <div class="header_right">
+    <div class="lang_toggle">
+      <button type="button" class="lang_btn" [class.active]="isActive('de')" (click)="useLanguage('de')">DE</button>
+      <button type="button" class="lang_btn" [class.active]="isActive('en')" (click)="useLanguage('en')">EN</button>
+    </div>
+
+    <!-- Burger-Button: nur ab 768px sichtbar, wird beim Öffnen zum X -->
+    <button
+      type="button"
+      class="burger"
+      [class.open]="menuOpen()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-menu"
+      [attr.aria-label]="'HEADER.MENU' | translate"
+      (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+</nav>
+
+<!-- Dropdown-Menü unter dem Header (nur Mobile) -->
+<nav id="mobile-menu" class="mobile_menu" [class.open]="menuOpen()" [attr.aria-hidden]="!menuOpen()">
+  <a routerLink="/" fragment="about-me" [tabindex]="menuOpen() ? 0 : -1" (click)="closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
+  <a routerLink="/" fragment="skills" [tabindex]="menuOpen() ? 0 : -1" (click)="closeMenu()">{{ 'HEADER.SKILLS' | translate }}</a>
+  <a routerLink="/" fragment="projects" [tabindex]="menuOpen() ? 0 : -1" (click)="closeMenu()">{{ 'HEADER.PROJECTS' | translate }}</a>
+  <a routerLink="/" fragment="contact" [tabindex]="menuOpen() ? 0 : -1" (click)="closeMenu()">{{ 'HEADER.CONTACT' | translate }}</a>
 </nav>

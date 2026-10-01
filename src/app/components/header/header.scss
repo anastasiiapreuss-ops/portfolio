@@ -1,8 +1,15 @@
+// fixed: bleibt beim Scrollen oben stehen, auf allen Seiten gleich
 :host {
   display: block;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
-  background: transparent;
+  // gleicher blauer Hintergrund wie Footer/Sektionen (navy als Fallback)
+  background: var(--color-navy) url('/assets/imgs/background.png') center top / cover no-repeat;
+  // graue Linie zwischen Header und Hero bzw. Inhalt
+  border-bottom: 2px solid var(--color-divider);
   padding: var(--space-3) var(--space-5);
   color: var(--color-offwhite);
 }
@@ -49,6 +56,12 @@
   display: flex;
   align-items: center;
   gap: var(--space-5);
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .lang_toggle {
@@ -117,5 +130,144 @@
   &:focus-visible {
     outline: 2px solid var(--color-gold);
     outline-offset: 4px;
+  }
+}
+
+// ---------- Burger-Button (drei Striche → X) ----------
+.burger {
+  display: none; // nur Mobile
+  position: relative;
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    left: 4px;
+    width: 32px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-offwhite);
+    transition: transform 0.25s, opacity 0.2s, background 0.2s;
+  }
+
+  span:nth-child(1) { top: 6px; }
+  span:nth-child(2) { top: 14.5px; }
+  span:nth-child(3) { top: 23px; }
+
+  // Hover und offen: weiß → gold
+  &:hover span,
+  &.open span {
+    background: var(--color-gold);
+  }
+
+  // offen: obere und untere Linie drehen sich zur Mitte → X
+  &.open {
+    span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+}
+
+// ---------- Dropdown-Menü unter dem Header ----------
+.mobile_menu {
+  display: none; // nur Mobile
+  position: absolute;
+  top: 100%; // direkt unter der grauen Linie
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-3);
+  background: var(--color-navy) url('/assets/imgs/background.png') center top / cover no-repeat;
+  border-bottom: 2px solid var(--color-divider);
+
+  // zu: unsichtbar und leicht nach oben verschoben
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  a {
+    font-family: var(--font-body);
+    font-size: calc(var(--fs-body) + 6px);
+    font-weight: 500;
+    color: var(--color-offwhite);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-gold);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 4px;
+    }
+  }
+}
+
+// ---------- Responsive ----------
+// bis 900px: Links etwas kleiner, damit sie nicht in DE/EN laufen
+@media (max-width: 900px) {
+  :host {
+    padding-inline: var(--space-4);
+  }
+
+  .header_left,
+  .header_links {
+    gap: var(--space-3);
+  }
+
+  .header_links a {
+    font-size: calc(var(--fs-body) + 2px);
+  }
+}
+
+// bis 768px: Links weg, stattdessen Burger + Dropdown
+@media (max-width: 768px) {
+  .header_links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .mobile_menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 400px) {
+  :host {
+    padding-inline: var(--space-2);
+  }
+
+  .header_right {
+    gap: var(--space-2);
+  }
+
+  // DE/EN kleiner, damit der Header nicht überladen wirkt
+  .lang_btn {
+    font-size: var(--fs-small);
+    padding: 0.5em 0.9em;
   }
 }
