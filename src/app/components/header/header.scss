@@ -227,6 +227,22 @@
 }
 
 @media (max-width: 768px) {
+  .logo_link {
+    width: 72px;
+    height: 72px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-gold);
+    border-radius: 50%;
+    background: var(--color-navy);
+    box-shadow: 0 0 16px rgba(var(--color-gold-rgb), 0.25);
+  }
+
+  .ap_icon {
+    width: 50px;
+    height: 50px;
+  }
+
   .header_links {
     display: none;
   }

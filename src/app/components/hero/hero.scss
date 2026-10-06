@@ -88,14 +88,14 @@
 }
 
 .hero_role {
-  font-size: calc(var(--fs-body) + 14px);
+  font-size: calc(var(--fs-body) + 8px);
   opacity: 1;
   color: var(--color-offwhite);
 }
 
 .hero_tagline {
   font-family: var(--font-body);
-  font-size: calc(var(--fs-body) + 8px);
+  font-size: calc(var(--fs-body) + 3px);
   line-height: 1.6;
   color: var(--color-offwhite);
   opacity: 0.85;
