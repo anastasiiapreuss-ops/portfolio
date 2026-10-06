@@ -1,11 +1,9 @@
 .about-section {
     width: 100%;
     padding: var(--space-6) var(--space-5);
-    // Ebene 1: goldener Strich unten rechts, Ebene 2: dunkler Hintergrund
-    // 4.541 = Bildbreite / Breite des Strichs in gold_2.png (2048 / 451)
-    background-image: url('/assets/imgs/gold_2.png'), url('/assets/imgs/background.png');
-    background-size: calc(min(25vw, 420px) * 4.541) auto, cover;
-    background-position: right bottom, center top;
+    background-image: url('../../../../public/assets/imgs/gold_2.png'), url('../../../../public/assets/imgs/background.webp');
+    background-size: calc(min(25vw, 420px) * 4.541) auto, var(--bg-size);
+    background-position: right bottom, center bottom;
     background-repeat: no-repeat;                               
 }
 
@@ -158,18 +156,18 @@
     mask-position: center;
 
     &.icon-marker {
-        -webkit-mask-image: url('/assets/icons/icons8-marker-100.png');
-        mask-image: url('/assets/icons/icons8-marker-100.png');
+        -webkit-mask-image: url('../../../../public/assets/icons/icons8-marker-100.png');
+        mask-image: url('../../../../public/assets/icons/icons8-marker-100.png');
     }
 
     &.icon-bulb {
-        -webkit-mask-image: url('/assets/icons/icons8-light-48.png');
-        mask-image: url('/assets/icons/icons8-light-48.png');
+        -webkit-mask-image: url('../../../../public/assets/icons/icons8-light-48.png');
+        mask-image: url('../../../../public/assets/icons/icons8-light-48.png');
     }
 
     &.icon-team {
-        -webkit-mask-image: url('/assets/icons/icons8-benutzergruppen-64.png');
-        mask-image: url('/assets/icons/icons8-benutzergruppen-64.png');
+        -webkit-mask-image: url('../../../../public/assets/icons/icons8-benutzergruppen-64.png');
+        mask-image: url('../../../../public/assets/icons/icons8-benutzergruppen-64.png');
     }
 }
 
@@ -203,15 +201,12 @@
         padding-bottom: var(--space-5);
     }
 
-    // untereinander und linksbündig (nicht mittig)
     .about-inner {
         flex-direction: column;
         align-items: flex-start;
         gap: 52px;
     }
 
-    // flex: none – sonst wird die flex-basis (480px / 380px) in der Spalte zur
-    // Mindesthöhe und unter dem Button entsteht leerer Platz
     .about-content,
     .about-highlights {
         flex: none;
@@ -230,7 +225,6 @@
     }
 }
 
-// Highlights (Icons + Texte) auf kleinen Handys kompakter
 @media (max-width: 450px) {
     .about-text {
         font-size: var(--fs-body);
@@ -264,7 +258,6 @@
     }
 }
 
-// "Mehr erfahren"-Button auf kleinen Handys kleiner
 @media (max-width: 400px) {
     .more_button {
         width: 240px;

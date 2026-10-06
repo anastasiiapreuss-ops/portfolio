@@ -11,11 +11,11 @@ import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 export class Header {
   private translate = inject(TranslateService);
 
-  // ob das Mobile-Menü (Burger) gerade offen ist
   menuOpen = signal(false);
 
   useLanguage(language: string): void {
       this.translate.use(language);
+      document.documentElement.lang = language;
   }
 
   isActive(language: string): boolean {
@@ -30,13 +30,11 @@ export class Header {
       this.menuOpen.set(false);
   }
 
-  // Escape schließt das Menü
   @HostListener('document:keydown.escape')
   onEscape(): void {
       this.closeMenu();
   }
 
-  // Wird das Fenster wieder breiter als 768px, Menü zumachen
   @HostListener('window:resize')
   onResize(): void {
       if (window.innerWidth > 768) {

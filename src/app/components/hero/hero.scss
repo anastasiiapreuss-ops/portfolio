@@ -170,20 +170,17 @@
   aspect-ratio: 1 / 1;
   border: 2px solid var(--color-gold);
   border-radius: 50%;
-  text-align: center;
-  padding: var(--space-3);
   box-shadow:
     0 0 40px rgba(var(--color-gold-rgb), 0.35),
     0 0 90px rgba(var(--color-gold-rgb), 0.15);
+}
 
-  span {
-    font-family: var(--font-body);
-    font-size: var(--fs-small);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-offwhite);
-    opacity: 0.5;
-  }
+.hero_photo_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -199,7 +196,6 @@
     text-align: center;
   }
 
-  // hero_text löst sich auf, damit der Kreis zwischen "I AM" und Name rutscht
   .hero_text {
     display: contents;
   }

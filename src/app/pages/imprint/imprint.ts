@@ -7,10 +7,9 @@ import { LEGAL_DATA } from '../../legal-data';
 @Component({
   imports: [Header, RouterLink, TranslatePipe],
   selector: 'app-imprint',
-  styleUrl: '../legal-page.scss', // gleiche Styles wie die Datenschutz-Seite
+  styleUrl: '../legal-page.scss',
   templateUrl: './imprint.html',
 })
 export class Imprint {
-  // wird an die translate-Pipe übergeben und füllt {{name}}, {{street}} … in den Texten
   legal = LEGAL_DATA;
 }

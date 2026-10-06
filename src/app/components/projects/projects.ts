@@ -8,11 +8,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './projects.html',
 })
 export class Projects {
-  // github/live: Platzhalter – echte Links werden später eingesetzt
   projects = [
     {
       title: 'Join',
-      image: '/assets/imgs/join.png',
+      image: 'assets/imgs/join.png',
       tags: ['Angular', 'TypeScript', 'Firebase'],
       description: 'PROJECTS.JOIN_DESC',
       github: '#',
@@ -20,24 +19,23 @@ export class Projects {
     },
     {
       title: 'El Pollo Loco',
-      image: '/assets/imgs/el_pollo_loco.png',
+      image: 'assets/imgs/el_pollo_loco.webp',
       tags: ['JavaScript', 'HTML', 'CSS'],
       description: 'PROJECTS.POLLO_DESC',
-      github: '#',
-      live: '#',
+      github: 'https://github.com/anastasiiapreuss-ops/El-Pollo-Loco',
+      live: 'https://anastasiiapreuss.developerakademie.net/El_Pollo_Loco/index.html',
     },
     {
       title: 'Memory',
-      image: '/assets/imgs/memory.png',
+      image: 'assets/imgs/memory.png',
       tags: ['JavaScript', 'HTML', 'CSS'],
       description: 'PROJECTS.MEMORY_DESC',
-      github: '#',
-      live: '#',
+      github: 'https://github.com/anastasiiapreuss-ops/Memory',
+      live: 'https://anastasiiapreuss.developerakademie.net/Memory/dist/index.html',
     },
 
   ];
 
-  // Projekte, deren Bild schon einmal gehovert wurde – bleiben danach farbig
   litProjects = new Set<string>();
 
   light(title: string) {

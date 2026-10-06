@@ -10,8 +10,6 @@
     </p>
     <h1>{{ 'PRIVACY.TITLE' | translate }}</h1>
 
-    <!-- Jeder Abschnitt: Überschrift, Absätze (TEXT), optional eine Liste (LIST)
-         und optional Absätze nach der Liste (AFTER) -->
     @for (section of 'PRIVACY.SECTIONS' | translate: legal; track $index) {
       <section class="legal-section">
         <h2>{{ section.HEADING }}</h2>

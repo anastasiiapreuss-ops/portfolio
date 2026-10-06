@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, inject} from '@angular/core';
+﻿import { ApplicationConfig, provideBrowserGlobalErrorListeners, inject} from '@angular/core';
 import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from "@angular/common/http";
@@ -10,18 +10,15 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(
       routes,
-      // anchorScrolling: Links wie "/#skills" scrollen zur Section
-      // scrollPositionRestoration: neue Seite (z. B. Impressum) startet oben
       withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
-      // 'reload': auch ein zweiter Klick auf denselben Link scrollt erneut
       withRouterConfig({ onSameUrlNavigation: 'reload' }),
     ),
     provideHttpClient(),
     provideTranslateService({
-      lang: 'en',
+      lang: 'de',
       fallbackLang: 'en',
       loader: provideTranslateHttpLoader({
-        prefix: '/i18n/',
+        prefix: 'i18n/',
         suffix: '.json'
       })
     }),

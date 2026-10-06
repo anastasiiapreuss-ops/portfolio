@@ -6,7 +6,6 @@ import { Skills } from '../../components/skills/skills';
 import { Projects } from '../../components/projects/projects';
 import { Contact } from '../../components/contact/contact';
 
-// Startseite: alle Sections, die vorher direkt in app.html standen
 @Component({
   imports: [Header, Hero, About, Skills, Projects, Contact],
   selector: 'app-home',

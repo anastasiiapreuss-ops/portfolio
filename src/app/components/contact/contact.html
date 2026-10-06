@@ -13,19 +13,17 @@
     </section>
 
     <form class="contact-form" [formGroup]="sendMailForm" (ngSubmit)="submitSendMailForm()">
-      <!-- Jedes Feld hat darunter ein <p class="errorText"> mit fester Höhe.
-           Es ist immer da (reserviert den Platz), nur der Text erscheint per @if. -->
       <div class="field">
-        <label class="visually-hidden" for="senderName">{{ 'CONTACT.NAME' | translate }}</label>
+        <label class="visually-hidden" for="contact-name">{{ 'CONTACT.NAME' | translate }}</label>
         <input
-          [class.errorBorder]="!senderName?.valid && senderName?.touched"
+          [class.errorBorder]="!nameControl?.valid && nameControl?.touched"
           type="text"
-          id="senderName"
+          id="contact-name"
           formControlName="senderName"
           [placeholder]="'CONTACT.NAME' | translate"
         />
         <p class="errorText">
-          @if (!senderName?.valid && senderName?.touched) {
+          @if (!nameControl?.valid && nameControl?.touched) {
             {{ 'CONTACT.NAME_ERROR' | translate }}
           }
         </p>
@@ -85,8 +83,6 @@
     </form>
   </section>
 
-  <!-- Toast nach dem Senden. Der Container ist immer da (aria-live),
-       damit Screenreader den Text vorlesen, sobald der Toast erscheint. -->
   <div class="toast-container" role="status" aria-live="polite">
     @if (sendStatus() !== 'idle') {
       <div

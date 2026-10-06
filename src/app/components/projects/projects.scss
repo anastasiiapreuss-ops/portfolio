@@ -1,11 +1,10 @@
-// --pad-x: seitlicher Abstand der Section.
 .projects-section {
     --pad-x: var(--space-5);
     width: 100%;
     padding: var(--space-6) var(--pad-x);
-    background-image: url('/assets/imgs/background.png');
-    background-size: cover;
-    background-position: center top;
+    background-image: url('../../../../public/assets/imgs/background.webp');
+    background-size: var(--bg-size);
+    background-position: center bottom;
     background-repeat: no-repeat;
 }
 
@@ -31,8 +30,6 @@
     gap: var(--space-6);
 }
 
-// Bild und Info nebeneinander, Info vertikal mittig zum Bild.
-// Jede zweite Reihe dreht die Reihenfolge um (Info links / Bild rechts).
 .project_row {
     display: flex;
     align-items: center;
@@ -43,10 +40,6 @@
     }
 }
 
-// Alle Bilder exakt gleich groß: feste Breite (per clamp) und festes Format 16:10
-// → bei 560px Breite 350px hoch. object-fit: cover füllt den Rahmen ohne Verzerrung,
-// überstehende Ränder werden minimal abgeschnitten.
-// Eckenradius wie bei join.png: 5 % der Breite / 8 % der Höhe (= 28px bei 560 × 350).
 .project_image {
     flex: 0 0 auto;
 
@@ -61,10 +54,6 @@
     }
 }
 
-// Hover: Bild ist vorher leicht gedämpft und leuchtet beim ersten Drüberfahren
-// (oder Tab-Fokus auf die Buttons) in voller Farbe auf. Danach setzt projects.ts
-// die Klasse .is-lit auf die Reihe – das Bild bleibt dauerhaft farbig.
-// Nur auf Geräten mit Maus – auf Touch-Geräten sind die Bilder immer farbig.
 @media (hover: hover) {
     .project_image img {
         filter: grayscale(0.75) brightness(0.55);
@@ -159,7 +148,6 @@
     color: var(--color-gold);
 }
 
-// Tablet/Mobile: eine Spalte, immer Bild oben, Info darunter.
 @media (max-width: 900px) {
     .projects-section {
         padding-top: var(--space-5);
@@ -177,13 +165,10 @@
         gap: var(--space-3);
     }
 
-    // Eine Spalte: Bild nimmt die volle Breite, höchstens 560px.
-    // Eine Spalte: Bild nimmt die volle Breite, höchstens 560px.
     .project_image img {
         width: min(100%, 560px);
     }
 
-    // Text genauso breit wie das Bild darüber
     .project_desc {
         max-width: 560px;
     }
@@ -195,7 +180,6 @@
     }
 }
 
-// Sehr schmal (bis 320px): Buttons teilen sich die Breite, solange sie nebeneinander passen.
 @media (max-width: 400px) {
     .projects-section {
         --pad-x: var(--space-2);
@@ -207,7 +191,6 @@
         font-size: var(--fs-body);
     }
 
-    // Tags kleiner und alle in einer Zeile
     .project_tags {
         flex-wrap: nowrap;
         gap: 6px;

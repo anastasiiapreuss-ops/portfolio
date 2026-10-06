@@ -1,7 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../public/assets/fonts/space-grotesk-v22-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../public/assets/fonts/space-grotesk-v22-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/assets/fonts/inter-v20-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/assets/fonts/inter-v20-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/assets/fonts/inter-v20-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/assets/fonts/inter-v20-latin-800.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
 
 :root {
-  /* Colors — Styleguide Anastasiia Preuß · Navy Gold */
   --color-navy: #0a1825;
   --color-brown: #2e2c28;
   --color-gold: #daae72;
@@ -11,18 +51,15 @@
   --color-divider: #39434d;
   --color-divider-rgb: 57, 67, 77;
 
-  /* Fonts */
-  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-heading: 'Inter', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
 
-  /* Font sizes (desktop / mobile via clamp) */
   --fs-h1: clamp(32px, 4vw, 44px);
   --fs-h2: clamp(24px, 3vw, 30px);
   --fs-h3: clamp(17px, 2vw, 18px);
   --fs-body: clamp(15px, 1.2vw, 16px);
   --fs-small: clamp(12px, 1vw, 13px);
 
-  /* Spacing scale */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -30,13 +67,12 @@
   --space-5: 64px;
   --space-6: 96px;
 
-  /* Radii */
   --radius-sm: 8px;
   --radius-md: 12px;
 
-  /* Layout */
   --content-max-width: 1440px;
-  --header-height: 122px; /* Logo 72px + 2 × 24px Padding + 2px Linie */
+
+  --bg-size: auto 300%;
 }
 
 * {
@@ -47,11 +83,6 @@
 html,
 body {
   height: 100%;
-}
-
-// Sprungziele (#about-me usw.) nicht unter dem fixierten Header verstecken
-html {
-  scroll-padding-top: var(--header-height);
 }
 
 body {

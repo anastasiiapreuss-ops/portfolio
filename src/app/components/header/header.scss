@@ -1,15 +1,8 @@
-// fixed: bleibt beim Scrollen oben stehen, auf allen Seiten gleich
 :host {
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 10;
-  // gleicher blauer Hintergrund wie Footer/Sektionen (navy als Fallback)
-  background: var(--color-navy) url('/assets/imgs/background.png') center top / cover no-repeat;
-  // graue Linie zwischen Header und Hero bzw. Inhalt
-  border-bottom: 2px solid var(--color-divider);
+  background: transparent;
   padding: var(--space-3) var(--space-5);
   color: var(--color-offwhite);
 }
@@ -28,7 +21,6 @@
   gap: var(--space-5);
 }
 
-// flex: verhindert eine kleine Lücke unter dem Bild im Link
 .logo_link {
   display: flex;
   border-radius: var(--radius-sm);
@@ -133,9 +125,8 @@
   }
 }
 
-// ---------- Burger-Button (drei Striche → X) ----------
 .burger {
-  display: none; // nur Mobile
+  display: none;
   position: relative;
   width: 40px;
   height: 32px;
@@ -159,13 +150,11 @@
   span:nth-child(2) { top: 14.5px; }
   span:nth-child(3) { top: 23px; }
 
-  // Hover und offen: weiß → gold
   &:hover span,
   &.open span {
     background: var(--color-gold);
   }
 
-  // offen: obere und untere Linie drehen sich zur Mitte → X
   &.open {
     span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
     span:nth-child(2) { opacity: 0; }
@@ -178,21 +167,19 @@
   }
 }
 
-// ---------- Dropdown-Menü unter dem Header ----------
 .mobile_menu {
-  display: none; // nur Mobile
+  display: none;
   position: absolute;
-  top: 100%; // direkt unter der grauen Linie
+  top: 100%;
   left: 0;
   right: 0;
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-3);
-  background: var(--color-navy) url('/assets/imgs/background.png') center top / cover no-repeat;
+  background: var(--color-navy) url('../../../../public/assets/imgs/background.webp') center bottom / cover no-repeat;
   border-bottom: 2px solid var(--color-divider);
 
-  // zu: unsichtbar und leicht nach oben verschoben
   visibility: hidden;
   opacity: 0;
   transform: translateY(-12px);
@@ -224,8 +211,6 @@
   }
 }
 
-// ---------- Responsive ----------
-// bis 900px: Links etwas kleiner, damit sie nicht in DE/EN laufen
 @media (max-width: 900px) {
   :host {
     padding-inline: var(--space-4);
@@ -241,7 +226,6 @@
   }
 }
 
-// bis 768px: Links weg, stattdessen Burger + Dropdown
 @media (max-width: 768px) {
   .header_links {
     display: none;
@@ -265,7 +249,6 @@
     gap: var(--space-2);
   }
 
-  // DE/EN kleiner, damit der Header nicht überladen wirkt
   .lang_btn {
     font-size: var(--fs-small);
     padding: 0.5em 0.9em;

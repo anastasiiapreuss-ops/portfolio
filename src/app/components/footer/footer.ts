@@ -9,6 +9,5 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './footer.html',
 })
 export class Footer {
-  // aktuelles Jahr für das Copyright – so muss man es nie von Hand ändern
   year = new Date().getFullYear();
 }

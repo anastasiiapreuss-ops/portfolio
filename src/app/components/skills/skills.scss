@@ -1,9 +1,9 @@
 .skills-section {
     width: 100%;
     padding: var(--space-6) var(--space-4);
-    background-image: url('/assets/imgs/background.png');
-    background-size: cover;
-    background-position: center top;
+    background-image: url('../../../../public/assets/imgs/background.webp');
+    background-size: var(--bg-size);
+    background-position: center bottom;
     background-repeat: no-repeat;
 }
 
@@ -50,7 +50,6 @@
 
 .skills-grid {
     display: grid;
-    // minmax(0, 1fr): Spalten dürfen schmaler werden als ihr Inhalt → kein horizontales Scrollen
     grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: var(--space-6);
     column-gap: var(--space-6);
@@ -87,43 +86,43 @@
     transition: filter 0.2s;
 
     &.icon-angular {
-        -webkit-mask-image: url('/assets/icons/14. Icons.svg');
-        mask-image: url('/assets/icons/14. Icons.svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/14. Icons.svg');
+        mask-image: url('../../../../public/assets/icons/14. Icons.svg');
     }
 
     &.icon-typescript {
-        -webkit-mask-image: url('/assets/icons/Logo (3).svg');
-        mask-image: url('/assets/icons/Logo (3).svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/Logo (3).svg');
+        mask-image: url('../../../../public/assets/icons/Logo (3).svg');
     }
 
     &.icon-javascript {
-        -webkit-mask-image: url('/assets/icons/Logo (2).svg');
-        mask-image: url('/assets/icons/Logo (2).svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/Logo (2).svg');
+        mask-image: url('../../../../public/assets/icons/Logo (2).svg');
     }
 
     &.icon-html {
-        -webkit-mask-image: url('/assets/icons/Logo.svg');
-        mask-image: url('/assets/icons/Logo.svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/Logo.svg');
+        mask-image: url('../../../../public/assets/icons/Logo.svg');
     }
 
     &.icon-css {
-        -webkit-mask-image: url('/assets/icons/Logo (1).svg');
-        mask-image: url('/assets/icons/Logo (1).svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/Logo (1).svg');
+        mask-image: url('../../../../public/assets/icons/Logo (1).svg');
     }
 
     &.icon-git {
-        -webkit-mask-image: url('/assets/icons/14. Icons (2).svg');
-        mask-image: url('/assets/icons/14. Icons (2).svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/14. Icons (2).svg');
+        mask-image: url('../../../../public/assets/icons/14. Icons (2).svg');
     }
 
     &.icon-api {
-        -webkit-mask-image: url('/assets/icons/14. Icons (3).svg');
-        mask-image: url('/assets/icons/14. Icons (3).svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/14. Icons (3).svg');
+        mask-image: url('../../../../public/assets/icons/14. Icons (3).svg');
     }
 
     &.icon-scrum {
-        -webkit-mask-image: url('/assets/icons/14. Icons (4).svg');
-        mask-image: url('/assets/icons/14. Icons (4).svg');
+        -webkit-mask-image: url('../../../../public/assets/icons/14. Icons (4).svg');
+        mask-image: url('../../../../public/assets/icons/14. Icons (4).svg');
     }
 }
 
@@ -150,7 +149,6 @@
         padding-right: var(--space-4);
     }
 
-    // 96px Spaltenabstand ist hier zu breit → Icons passen sonst nicht in 4 Spalten
     .skills-grid {
         row-gap: var(--space-5);
         column-gap: var(--space-3);
@@ -178,10 +176,6 @@
     }
 }
 
-// "TECHNOLOGIES I WORK WITH" auf kleinen Handys kompakter.
-// Schrift wächst mit der Bildschirmbreite (vw) → passt meist in eine Zeile.
-// Nur wenn es wirklich zu eng wird (langer DE-Text auf sehr kleinen Handys),
-// darf der Text umbrechen – der Strich bleibt immer sichtbar.
 @media (max-width: 450px) {
     .skills-subtitle {
         gap: var(--space-1);
@@ -195,7 +189,6 @@
     }
 }
 
-// ab 400px: Strich oben, Text darunter → Text hat die volle Breite
 @media (max-width: 400px) {
     .skills-subtitle {
         flex-direction: column;
