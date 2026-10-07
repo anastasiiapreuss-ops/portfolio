@@ -4,7 +4,7 @@
 
     <section class="projects-list">
       @for (project of projects; track project.title) {
-        <article class="project_row" (mouseenter)="light(project.title)" [class.is-lit]="litProjects.has(project.title)" (focusin)="light(project.title)">
+        <article class="project_row" [attr.data-aos]="$even ? 'fade-right' : 'fade-left'" (mouseenter)="light(project.title)" [class.is-lit]="litProjects.has(project.title)" (focusin)="light(project.title)">
           <div class="project_image">
             <img [src]="project.image" [alt]="project.title" />
           </div>

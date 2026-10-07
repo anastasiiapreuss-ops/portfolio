@@ -23,6 +23,7 @@ export class Contact {
     }),
     message: new FormControl('', {
       validators: [Validators.required, Validators.minLength(3)],
+      
     }),
     privacy: new FormControl(false, {
       validators: [Validators.requiredTrue],

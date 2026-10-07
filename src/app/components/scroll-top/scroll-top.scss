@@ -1,0 +1,79 @@
+.scroll-top {
+    position: fixed;
+    right: var(--space-3);
+    bottom: calc(var(--space-4) + var(--footer-offset, 0px));
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 2px solid var(--color-gold);
+    border-radius: 50%;
+    background: var(--color-navy);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s, background 0.2s;
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-offwhite);
+        outline-offset: 3px;
+    }
+}
+
+.scroll-top_arrow {
+    width: 22px;
+    height: 22px;
+    background-color: var(--color-gold);
+    -webkit-mask-image: url('../../../../public/assets/icons/icons8-pfeil-100.png');
+    mask-image: url('../../../../public/assets/icons/icons8-pfeil-100.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transform: rotate(-90deg);
+    transition: background-color 0.2s;
+}
+
+@media (hover: hover) {
+    .scroll-top.is-visible:hover {
+        background: var(--color-gold);
+        transform: translateY(-3px);
+
+        .scroll-top_arrow {
+            background-color: var(--color-navy);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-top {
+        right: var(--space-2);
+        bottom: calc(var(--space-2) + var(--footer-offset, 0px));
+        width: 44px;
+        height: 44px;
+    }
+
+    .scroll-top_arrow {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-top {
+        transition: none;
+    }
+}

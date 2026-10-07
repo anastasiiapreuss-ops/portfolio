@@ -1,4 +1,5 @@
 :host {
+    --fs-small: clamp(12px, 1vw, 13px);
     display: block;
     position: relative;
     border-top: 2px solid var(--color-divider);
@@ -138,10 +139,11 @@
 
 @media (max-width: 500px) {
     .footer-links {
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 4px 12px;
 
         a {
-            font-size: var(--fs-small);
+            font-size: 14px;
         }
     }
 
@@ -166,10 +168,10 @@
     }
 
     .footer-links {
-        gap: 10px;
+        gap: 4px 10px;
 
         a {
-            font-size: 11px;
+            font-size: 13px;
         }
     }
 

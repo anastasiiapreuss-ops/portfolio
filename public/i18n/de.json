@@ -42,6 +42,24 @@
     "MEMORY_DESC": "Memory-Spiel mit wählbaren Themes, Spielern und Spielfeldgrößen.",
     "POLLO_DESC": "Ein Jump-and-Run-Browserspiel: Hilf Pepe, Münzen und Salsa zu sammeln und das verrückte Huhn zu besiegen."
   },
+  "TESTIMONIALS": {
+    "TITLE": "Was Kollegen über mich",
+    "TITLE_ACCENT": "sagen",
+    "TITLE_END": "",
+    "CAROUSEL_LABEL": "Kommentare von Kollegen",
+    "PREV": "Vorheriger Kommentar",
+    "NEXT": "Nächster Kommentar",
+    "GO_TO": "Gehe zu Kommentar",
+    "CHRISTIAN_TEXT": "Ich hatte das große Glück, mit Anastasiia in einem Gruppenprojekt an der Developer Akademie zusammenzuarbeiten, das viel Mühe gekostet hat. Sie blieb immer ruhig, gelassen und fokussiert und hat dafür gesorgt, dass unser Team auf Erfolg eingestellt war. Zudem ist sie sehr kreativ und hat ein ausgezeichnetes Auge fürs Design, was unserem Projekt sichtbar gutgetan hat. Sie ist super sachkundig, es macht einfach Spaß, mit ihr zu arbeiten, und ich würde es jederzeit gerne wieder tun.",
+    "CHRISTIAN_NAME": "Christian",
+    "CHRISTIAN_ROLE": "Teamkollege · Developer Akademie",
+    "PLACEHOLDER_2_TEXT": "PLATZHALTER Kommentar 2 – bitte durch echten Text ersetzen.",
+    "PLACEHOLDER_2_NAME": "PLATZHALTER Name 2",
+    "PLACEHOLDER_2_ROLE": "Rolle",
+    "PLACEHOLDER_3_TEXT": "PLATZHALTER Kommentar 3 – bitte durch echten Text ersetzen.",
+    "PLACEHOLDER_3_NAME": "PLATZHALTER Name 3",
+    "PLACEHOLDER_3_ROLE": "Rolle"
+  },
   "CONTACT": {
     "TITLE": "Kontakt",
     "TEXT_1": "Du hast ein Projekt im Kopf?",
@@ -64,6 +82,9 @@
     "NAV_LABEL": "Rechtliches",
     "IMPRINT": "Impressum",
     "PRIVACY": "Datenschutz"
+  },
+  "SCROLL_TOP": {
+    "LABEL": "Nach oben scrollen"
   },
   "LEGAL": {
     "EYEBROW": "RECHTLICHES",

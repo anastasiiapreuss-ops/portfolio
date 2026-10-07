@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="scroll-top"
+  [class.is-visible]="visible()"
+  [attr.aria-label]="'SCROLL_TOP.LABEL' | translate"
+  (click)="scrollToTop()"
+>
+  <span class="scroll-top_arrow" aria-hidden="true"></span>
+</button>

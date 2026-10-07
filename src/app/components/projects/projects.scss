@@ -92,7 +92,7 @@
         border: 1px solid rgba(var(--color-gold-rgb), 0.4);
         border-radius: 999px;
         font-family: var(--font-body);
-        font-size: calc(var(--fs-small) + 3px); 
+        font-size: var(--fs-small);
         color: var(--color-offwhite);
     }
 }
@@ -192,7 +192,7 @@
     }
 
     .project_tags {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         gap: 6px;
 
         li {

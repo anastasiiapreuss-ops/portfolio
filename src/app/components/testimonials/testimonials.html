@@ -1,0 +1,66 @@
+<section class="testimonials-section">
+  <section class="testimonials-inner">
+    <h2>
+      {{ 'TESTIMONIALS.TITLE' | translate }}
+      <span class="accent">{{ 'TESTIMONIALS.TITLE_ACCENT' | translate }}</span>
+      {{ 'TESTIMONIALS.TITLE_END' | translate }}
+    </h2>
+
+    <div
+      class="testimonials-track"
+      aria-roledescription="carousel"
+      [attr.aria-label]="'TESTIMONIALS.CAROUSEL_LABEL' | translate"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+    >
+      @for (testimonial of testimonials; track testimonial.text) {
+        <article
+          class="testimonial_card"
+          [class.is-active]="offset($index) === 0"
+          [class.is-prev]="offset($index) === -1"
+          [class.is-next]="offset($index) === 1"
+          [attr.aria-hidden]="offset($index) !== 0"
+          (click)="goTo($index)"
+        >
+          <span class="testimonial_quote" aria-hidden="true">&ldquo;</span>
+          <p class="testimonial_text">{{ testimonial.text | translate }}</p>
+          <footer class="testimonial_author">
+            <span class="testimonial_name">{{ testimonial.name | translate }}</span>
+            <span class="testimonial_role">{{ testimonial.role | translate }}</span>
+          </footer>
+        </article>
+      }
+    </div>
+
+    <div class="testimonials-controls">
+      <button
+        type="button"
+        class="testimonials-arrow testimonials-arrow--prev"
+        [attr.aria-label]="'TESTIMONIALS.PREV' | translate"
+        (click)="prev()"
+      ></button>
+
+      <div class="testimonials-dots">
+        @for (testimonial of testimonials; track testimonial.text) {
+          <button
+            type="button"
+            class="testimonials-dot"
+            [class.is-active]="active() === $index"
+            [attr.aria-label]="('TESTIMONIALS.GO_TO' | translate) + ' ' + ($index + 1)"
+            [attr.aria-current]="active() === $index"
+            (click)="goTo($index)"
+          ></button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="testimonials-arrow testimonials-arrow--next"
+        [attr.aria-label]="'TESTIMONIALS.NEXT' | translate"
+        (click)="next()"
+      ></button>
+    </div>
+  </section>
+</section>
+
+<hr class="section-divider" />

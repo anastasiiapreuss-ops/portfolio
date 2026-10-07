@@ -42,6 +42,24 @@
     "MEMORY_DESC": "Memory game with selectable themes, players and board sizes.",
     "POLLO_DESC": "A jump-and-run browser game: help Pepe collect coins and salsa and defeat the crazy hen."
   },
+  "TESTIMONIALS": {
+    "TITLE": "What colleagues",
+    "TITLE_ACCENT": "say",
+    "TITLE_END": "about me",
+    "CAROUSEL_LABEL": "Comments from colleagues",
+    "PREV": "Previous comment",
+    "NEXT": "Next comment",
+    "GO_TO": "Go to comment",
+    "CHRISTIAN_TEXT": "I had the great fortune of working with Anastasiia on a demanding group project at the Developer Akademie. She always stayed calm, composed and focused, and made sure our team was set up for success. She is also very creative and has an excellent eye for design, which visibly benefited our project. She is extremely knowledgeable, it is simply a pleasure to work with her, and I would gladly do it again anytime.",
+    "CHRISTIAN_NAME": "Christian",
+    "CHRISTIAN_ROLE": "Teammate · Developer Akademie",
+    "PLACEHOLDER_2_TEXT": "PLACEHOLDER comment 2 – please replace with real text.",
+    "PLACEHOLDER_2_NAME": "PLACEHOLDER name 2",
+    "PLACEHOLDER_2_ROLE": "Role",
+    "PLACEHOLDER_3_TEXT": "PLACEHOLDER comment 3 – please replace with real text.",
+    "PLACEHOLDER_3_NAME": "PLACEHOLDER name 3",
+    "PLACEHOLDER_3_ROLE": "Role"
+  },
   "CONTACT": {
     "TITLE": "Contact",
     "TEXT_1": "Got a project in mind?",
@@ -64,6 +82,9 @@
     "NAV_LABEL": "Legal",
     "IMPRINT": "Legal Notice",
     "PRIVACY": "Privacy Policy"
+  },
+  "SCROLL_TOP": {
+    "LABEL": "Scroll to top"
   },
   "LEGAL": {
     "EYEBROW": "LEGAL",
